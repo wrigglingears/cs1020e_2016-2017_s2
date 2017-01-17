@@ -7,21 +7,22 @@ private:
     struct Node {
         int number;
         Node* next;
+        Node() : next(NULL) {}
         ~Node() {
             delete next;
-            next = nullptr;
+            next = NULL;
         }
     };
     Node* _head;
 public:
-    LinkedList() : _head(nullptr) {}
+    LinkedList() : _head(NULL) {}
     ~LinkedList() {
         delete _head;
-        _head = nullptr;
+        _head = NULL;
     }
     void print() {
         Node* curr = _head;
-        while (curr != nullptr) {
+        while (curr != NULL) {
             cout << curr->number << " ";
             curr = curr->next;
         }
@@ -37,19 +38,19 @@ public:
     }
     void pop() {
         // Check if we have a node to delete
-        if (_head != nullptr) {
+        if (_head != NULL) {
             Node* temp = _head;
             // Set the new head
             _head = _head->next;
             // Prep node for deletion
-            temp->next = nullptr;
+            temp->next = NULL;
             // Delete node
             delete temp;
         }
     }
     int retrieve( int idx ) {
         Node* curr = _head;
-        for (int i = 0; curr != nullptr; ++i, curr = curr->next) {
+        for (int i = 0; curr != NULL; ++i, curr = curr->next) {
             if (i == idx) {
                 return curr->number;
             }
@@ -58,12 +59,12 @@ public:
     }
     void remove( int idx ) {
         Node* curr = _head;
-        Node* prev = nullptr;
-        for (int i = 0; curr != nullptr; ++i, prev = curr, curr = curr->next) {
+        Node* prev = NULL;
+        for (int i = 0; curr != NULL; ++i, prev = curr, curr = curr->next) {
             if (i == idx) {
                 // Redirect pointers
                 prev->next = curr->next;
-                curr->next = nullptr;
+                curr->next = NULL;
                 // Remove node
                 delete curr;
                 return;
@@ -72,7 +73,7 @@ public:
     }
     void sort() {
         // 0 or 1 node, automatically sorted
-        if (_head == nullptr || _head->next == nullptr) {
+        if (_head == NULL || _head->next == NULL) {
             return;
         }
         // Method used here is bubble sort
@@ -82,7 +83,7 @@ public:
             Node* first = _head;
             Node* second = _head->next;
             // Run through the list
-            while (second != nullptr) {
+            while (second != NULL) {
                 // Out of order
                 if (first->number > second->number) {
                     sorted = false;

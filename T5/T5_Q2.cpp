@@ -8,25 +8,26 @@ private:
         int number;
         Node* next;
         Node* prev;
+        Node() : next(NULL), prev(NULL) {}
         ~Node() {
             delete next;
-            next = nullptr;
-            prev = nullptr;
+            next = NULL;
+            prev = NULL;
         }
     };
     Node* head;
 public:
-    CircularDoublyLinkedList() : head(nullptr) {}
+    CircularDoublyLinkedList() : head(NULL) {}
     ~CircularDoublyLinkedList() {
         // Turn list from circular to standard list
-        if (head != nullptr) {
-            head->prev->next = nullptr;
+        if (head != NULL) {
+            head->prev->next = NULL;
         }
         delete head;
-        head = nullptr;
+        head = NULL;
     }
     void print() {
-        if (head == nullptr) {
+        if (head == NULL) {
             return;
         }
         Node* curr = head;
@@ -40,7 +41,7 @@ public:
     }
     void push(int value) {
         // Special case for empty list
-        if (head == nullptr) {
+        if (head == NULL) {
             Node* temp = new Node;
             temp->number = value;
             temp->next = temp;
@@ -59,14 +60,14 @@ public:
     }
     void pop() {
         // Special case for list of size 0
-        if (head == nullptr) {
+        if (head == NULL) {
             return;
         }
         // Special case for list of size 1
         if (head->next == head) {
-            head->next = nullptr;
+            head->next = NULL;
             delete head;
-            head = nullptr;
+            head = NULL;
         }
         // Normal case
         Node* temp = head;
@@ -75,11 +76,11 @@ public:
         temp->prev->next = head;
         head->prev = temp->prev;
         // Delete node
-        temp->next = nullptr;
+        temp->next = NULL;
         delete temp;
     }
     int retrieve(int idx) {
-        if (head == nullptr) {
+        if (head == NULL) {
             return -1;
         }
         if (idx == 0) {
@@ -94,7 +95,7 @@ public:
         return -1;
     }
     void remove(int idx) {
-        if (head == nullptr) {
+        if (head == NULL) {
             return;
         }
         if (idx == 0) {
@@ -107,9 +108,9 @@ public:
                 // Redirect pointers
                 curr->prev->next = curr->next;
                 curr->next->prev = curr->prev;
-                curr->next = nullptr;
+                curr->next = NULL;
                 delete curr;
-                curr = nullptr;
+                curr = NULL;
                 return;
             }
         }
@@ -117,7 +118,7 @@ public:
     }
     void reverse() {
         // Size 0 or 1, no need to reverse
-        if (head == nullptr || head->next == nullptr) {
+        if (head == NULL || head->next == NULL) {
             return;
         }
         Node* front = head;

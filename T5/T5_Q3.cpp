@@ -10,8 +10,16 @@ void reverse(list<int>& linkList) {
         return;
     }
     list<int>::iterator front = linkList.begin();
-    list<int>::iterator back = --linkList.end();
+    list<int>::iterator back = linkList.end();
+
+    /* Shorter, but not as obvious
+    while (front != --back) {
+        swap(*front, *back);
+        ++front;
+    }*/
+
     while (front != back) {
+        --back;
         swap(*front, *back);
         // If list length is even
         if (++front == back) {

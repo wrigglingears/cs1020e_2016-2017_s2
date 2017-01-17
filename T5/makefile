@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-std=c++11 -Wall
 
-all: 1 3
+all: 1 2 3
 
 1: T5_Q1.cpp
 	$(CC) $(CFLAGS) $^ -o $@

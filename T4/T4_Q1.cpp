@@ -89,8 +89,8 @@ double calculateCAP(NusModule* moduleList, int numModules) {
 }
 
 int main(void) {
-    NusModule modules[2] = {{"CS1010E", 4, "A+"},
-                            {"CS1020E", 3, "B"}};
+    NusModule modules[2] {{"CS1010E", 4, "A+"},
+                          {"CS1020E", 3, "B"}};
     modules[0].printInfo();
     modules[1].printInfo();
     cout << calculateCAP(modules, 2) << endl;
