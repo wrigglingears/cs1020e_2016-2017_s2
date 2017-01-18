@@ -1,4 +1,5 @@
 #include <iostream>
+#include <initializer_list>
 
 using namespace std;
 
@@ -15,7 +16,13 @@ private:
     };
     Node* _head;
 public:
-    LinkedList() : _head(NULL) {}
+    LinkedList() : _head(NULL) { }
+    LinkedList(initializer_list<int> initVals)
+    : LinkedList() {
+        for (int i = initVals.size() - 1; i >= 0; --i) {
+            push(*(initVals.begin() + i));
+        }
+    }
     ~LinkedList() {
         delete _head;
         _head = NULL;
@@ -244,8 +251,11 @@ int main(void) {
     list2.push(4);
     list2.push(3);
 
+    LinkedList list3{2, 3, 4, 5, 6};
+
     list.print();
     list2.print();
+    list3.print();
 
     //list.moveFromList(list2); cout << "moved" << endl;
 
@@ -263,6 +273,6 @@ int main(void) {
 
     list.reverseRestricted(); cout << "reversed restricted" << endl;
     list.print();
-    
+
     return 0;
 }

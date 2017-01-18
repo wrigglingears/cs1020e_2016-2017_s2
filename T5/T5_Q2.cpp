@@ -1,4 +1,5 @@
 #include <iostream>
+#include <initializer_list>
 
 using namespace std;
 
@@ -15,25 +16,31 @@ private:
             prev = NULL;
         }
     };
-    Node* head;
+    Node* _head;
 public:
-    CircularDoublyLinkedList() : head(NULL) {}
+    CircularDoublyLinkedList() : _head(NULL) {}
+    CircularDoublyLinkedList(initializer_list<int> initVals)
+    : _head(NULL) {
+        for (int i = initVals.size() - 1; i >= 0; --i) {
+            push(*(initVals.begin() + i));
+        }
+    }
     ~CircularDoublyLinkedList() {
         // Turn list from circular to standard list
-        if (head != NULL) {
-            head->prev->next = NULL;
+        if (_head != NULL) {
+            _head->prev->next = NULL;
         }
-        delete head;
-        head = NULL;
+        delete _head;
+        _head = NULL;
     }
     void print() {
-        if (head == NULL) {
+        if (_head == NULL) {
             return;
         }
-        Node* curr = head;
+        Node* curr = _head;
         cout << curr->number << " ";
         curr = curr->next;
-        while (curr != head) {
+        while (curr != _head) {
             cout << curr->number << " ";
             curr = curr->next;
         }
@@ -41,53 +48,53 @@ public:
     }
     void push(int value) {
         // Special case for empty list
-        if (head == NULL) {
+        if (_head == NULL) {
             Node* temp = new Node;
             temp->number = value;
             temp->next = temp;
             temp->prev = temp;
-            head = temp;
+            _head = temp;
             return;
         }
         // Normal case
         Node* temp = new Node;
         temp->number = value;
-        temp->next = head;
-        temp->prev = head->prev;
-        head->prev->next = temp;
-        head->prev = temp;
-        head = temp;
+        temp->next = _head;
+        temp->prev = _head->prev;
+        _head->prev->next = temp;
+        _head->prev = temp;
+        _head = temp;
     }
     void pop() {
         // Special case for list of size 0
-        if (head == NULL) {
+        if (_head == NULL) {
             return;
         }
         // Special case for list of size 1
-        if (head->next == head) {
-            head->next = NULL;
-            delete head;
-            head = NULL;
+        if (_head->next == _head) {
+            _head->next = NULL;
+            delete _head;
+            _head = NULL;
         }
         // Normal case
-        Node* temp = head;
+        Node* temp = _head;
         // Redirect pointers
-        head = head->next;
-        temp->prev->next = head;
-        head->prev = temp->prev;
+        _head = _head->next;
+        temp->prev->next = _head;
+        _head->prev = temp->prev;
         // Delete node
         temp->next = NULL;
         delete temp;
     }
     int retrieve(int idx) {
-        if (head == NULL) {
+        if (_head == NULL) {
             return -1;
         }
         if (idx == 0) {
-            return head->number;
+            return _head->number;
         }
-        Node* curr = head->next;
-        for (int i = 1; curr != head; ++i, curr = curr->next) {
+        Node* curr = _head->next;
+        for (int i = 1; curr != _head; ++i, curr = curr->next) {
             if (i == idx) {
                 return curr->number;
             }
@@ -95,15 +102,15 @@ public:
         return -1;
     }
     void remove(int idx) {
-        if (head == NULL) {
+        if (_head == NULL) {
             return;
         }
         if (idx == 0) {
             pop();
             return;
         }
-        Node* curr = head->next;
-        for (int i = 1; curr != head; ++i, curr = curr->next) {
+        Node* curr = _head->next;
+        for (int i = 1; curr != _head; ++i, curr = curr->next) {
             if (i == idx) {
                 // Redirect pointers
                 curr->prev->next = curr->next;
@@ -118,11 +125,11 @@ public:
     }
     void reverse() {
         // Size 0 or 1, no need to reverse
-        if (head == NULL || head->next == NULL) {
+        if (_head == NULL || _head->next == NULL) {
             return;
         }
-        Node* front = head;
-        Node* back = head->prev;
+        Node* front = _head;
+        Node* back = _head->prev;
         while (front != back) {
             // Swap the two numbers
             int temp = front->number;
@@ -146,6 +153,9 @@ int main(void) {
     list.push(2);
     list.push(1);
     list.print();
+
+    CircularDoublyLinkedList list2{1, 2, 3, 4};
+    list2.print();
 
     cout << list.retrieve(4) << endl;
 

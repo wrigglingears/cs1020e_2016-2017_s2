@@ -78,7 +78,7 @@ public:
     }
 };
 
-double calculateCAP(NusModule* moduleList, int numModules) {
+double calcCAP(NusModule moduleList[], int numModules) {
     double sumProducts = 0.0;
     int sumCredits = 0;
     for (int i = 0; i < numModules; ++i) {
@@ -93,10 +93,10 @@ int main(void) {
                           {"CS1020E", 3, "B"}};
     modules[0].printInfo();
     modules[1].printInfo();
-    cout << calculateCAP(modules, 2) << endl;
+    cout << calcCAP(modules, 2) << endl;
 
     modules[1].declareAsSU();
     modules[0].printInfo();
     modules[1].printInfo();
-    cout << calculateCAP(modules, 2) << endl;
+    cout << calcCAP(modules, 2) << endl;
 }
