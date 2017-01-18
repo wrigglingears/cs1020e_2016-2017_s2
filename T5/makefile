@@ -13,4 +13,4 @@ all: 1 2 3
 	$(CC) $(CFLAGS) $^ -o $@
 
 clean:
-	rm 1.* 2.* 3.*
+	rm 1* 2* 3*
