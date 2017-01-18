@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -48,8 +49,10 @@ public:
     : _name(name), _credits(credits), _grade(grade) {
         _updatePoint();
     }
-    void printInfo() {
-        cout << _name << "(" << _credits << "): " << _grade << " = " << _point << endl;
+    string getTotalInfo() {
+        ostringstream oss;
+        oss << _name << "(" << _credits << "): " << _grade << " = " << _point;
+        return oss.str();
     }
     void setGrade(string grade) {
         _grade = grade;
@@ -89,14 +92,17 @@ double calcCAP(NusModule moduleList[], int numModules) {
 }
 
 int main(void) {
-    NusModule modules[2] {{"CS1010E", 4, "A+"},
-                          {"CS1020E", 3, "B"}};
-    modules[0].printInfo();
-    modules[1].printInfo();
-    cout << calcCAP(modules, 2) << endl;
+    NusModule modules[3] {{"CS1010E", 4, "A+"},
+                          {"CS1020E", 3, "B"},
+                          {"CS2010",  4, "A-"}};
+    cout << modules[0].getTotalInfo() << endl;
+    cout << modules[1].getTotalInfo() << endl;
+    cout << modules[2].getTotalInfo() << endl;
+    cout << calcCAP(modules, 3) << endl;
 
     modules[1].declareAsSU();
-    modules[0].printInfo();
-    modules[1].printInfo();
-    cout << calcCAP(modules, 2) << endl;
+    cout << modules[0].getTotalInfo() << endl;
+    cout << modules[1].getTotalInfo() << endl;
+    cout << modules[2].getTotalInfo() << endl;
+    cout << calcCAP(modules, 3) << endl;
 }
