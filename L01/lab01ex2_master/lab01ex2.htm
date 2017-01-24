@@ -1,0 +1,394 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0mm;
+	margin-right:0mm;
+	margin-bottom:10.0pt;
+	margin-left:0mm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-SG link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;text-justify:
+inter-ideograph;line-height:normal;page-break-after:avoid'><b><font size=5
+face="Times New Roman"><span lang=EN-US style='font-size:16.0pt;font-family:
+"Times New Roman","serif";font-weight:bold'>CS1020E | Lab 1 | Exercise 2</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;text-justify:
+inter-ideograph;line-height:normal;page-break-after:avoid'><b><font size=5
+face="Times New Roman"><span lang=EN-US style='font-size:16.0pt;font-family:
+"Times New Roman","serif";font-weight:bold'>Array of Points</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Objective</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>The objective of this exercise is to learn how use </span></font><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New"'>new</span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'> to
+dynamically allocate memory for an array in C++.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Problem Description</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>Complete the given C++ program </span></font><b><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New";font-weight:bold'>ArrayOfPoints.cpp</span></font></b><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'> to achieve the results shown in the
+following sample runs. Your program should read in the <i><span
+style='font-style:italic'>x</span></i> and <i><span style='font-style:italic'>y</span></i>
+coordinates of a set of 2D points and then display the points in the reverse
+order of the input.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>The given incomplete program has already defined a </span></font><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New"'>Point</span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+struct. Your complete program should use the </span></font><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>new</span></font><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'> operator to dynamically allocate an
+array of </span></font><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>Point</span></font><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>s to store the input points’
+coordinates. At the end of your program, memory taken by the </span></font><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New"'>Point</span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+array should be properly freed up.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><b><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif";font-weight:bold'>Add your code only inside the </span></font></b><b><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New";font-weight:bold'>main</span></font></b><b><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif";font-weight:bold'> function. Do not modify any other
+part of the given code.</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Inputs</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>The first input is a positive integer <i><span
+style='font-style:italic'>N</span></i> that indicates how many points are in
+the input. It is then followed by <i><span style='font-style:italic'>N</span></i>
+pairs of integers, where each pair is the <i><span style='font-style:italic'>x</span></i>
+and <i><span style='font-style:italic'>y</span></i> coordinates of a point.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Outputs</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>For the inputs as shown in the following sample
+runs, your program must produce exactly the same outputs, i.e. the white spaces
+and newlines must be at the same places.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Sample Run 1</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=2 color=red face="Courier New"><span
+lang=EN-US style='font-size:11.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>3</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=2 color=red face="Courier New"><span
+lang=EN-US style='font-size:11.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>1 2</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=2 color=red face="Courier New"><span
+lang=EN-US style='font-size:11.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>3 4</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><b><font size=2
+color=red face="Courier New"><span lang=EN-US style='font-size:11.0pt;
+font-family:"Courier New";color:red;font-weight:bold'>5 6</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=2 face="Courier New"><span lang=EN-US
+style='font-size:11.0pt;font-family:"Courier New"'>Point 2: (5, 6)</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=2 face="Courier New"><span lang=EN-US
+style='font-size:11.0pt;font-family:"Courier New"'>Point 1: (3, 4)</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=2 face="Courier New"><span lang=EN-US
+style='font-size:11.0pt;font-family:"Courier New"'>Point 0: (1, 2)</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>(<i><span style='font-style:italic'>User inputs are
+shown in <b><font color=red><span style='color:red;font-weight:bold'>bold red</span></font></b>.</span></i>)</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<b><font size=4 face="Times New Roman"><span lang=EN-US style='font-size:14.0pt;
+line-height:115%;font-family:"Times New Roman","serif";font-weight:bold'><br
+clear=all style='page-break-before:always'>
+</span></font></b>
+
+<p class=MsoNormal><b><font size=4 face="Times New Roman"><span lang=EN-US
+style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+font-weight:bold'>&nbsp;</span></font></b></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Sample Run 2</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=2 color=red face="Courier New"><span
+lang=EN-US style='font-size:11.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>6</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=2 color=red face="Courier New"><span
+lang=EN-US style='font-size:11.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>12 13</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=2 color=red face="Courier New"><span
+lang=EN-US style='font-size:11.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>10 11</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=2 color=red face="Courier New"><span
+lang=EN-US style='font-size:11.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>8 9</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=2 color=red face="Courier New"><span
+lang=EN-US style='font-size:11.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>6 7</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=2 color=red face="Courier New"><span
+lang=EN-US style='font-size:11.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>4 5</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><b><font size=2
+color=red face="Courier New"><span lang=EN-US style='font-size:11.0pt;
+font-family:"Courier New";color:red;font-weight:bold'>2 3</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=2 face="Courier New"><span lang=EN-US
+style='font-size:11.0pt;font-family:"Courier New"'>Point 5: (2, 3)</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=2 face="Courier New"><span lang=EN-US
+style='font-size:11.0pt;font-family:"Courier New"'>Point 4: (4, 5)</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=2 face="Courier New"><span lang=EN-US
+style='font-size:11.0pt;font-family:"Courier New"'>Point 3: (6, 7)</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=2 face="Courier New"><span lang=EN-US
+style='font-size:11.0pt;font-family:"Courier New"'>Point 2: (8, 9)</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=2 face="Courier New"><span lang=EN-US
+style='font-size:11.0pt;font-family:"Courier New"'>Point 1: (10, 11)</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=2 face="Courier New"><span lang=EN-US
+style='font-size:11.0pt;font-family:"Courier New"'>Point 0: (12, 13)</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>(<i><span style='font-style:italic'>User inputs are
+shown in <b><font color=red><span style='color:red;font-weight:bold'>bold red</span></font></b>.</span></i>)</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Submission</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>You need to submit only your completed </span></font><b><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New";font-weight:bold'>ArrayOfPoints.cpp</span></font></b><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>. to CodeCrunch (</span></font><a
+href="https://codecrunch.comp.nus.edu.sg/"><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>https://codecrunch.comp.nus.edu.sg/</span></font></a><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>) before the specified deadline. We will
+take only your latest submission.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal;text-autospace:none'><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>Late
+submissions will not be accepted. The submission system in CodeCrunch will
+automatically close at the deadline.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+</div>
+
+</body>
+
+</html>
