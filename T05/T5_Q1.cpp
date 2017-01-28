@@ -1,5 +1,6 @@
 #include <iostream>
 #include <initializer_list>
+#include <string>
 
 using namespace std;
 
@@ -27,13 +28,14 @@ public:
         delete _head;
         _head = NULL;
     }
-    void print() {
+    string toString() {
+        ostringstream oss;
         Node* curr = _head;
         while (curr != NULL) {
-            cout << curr->number << " ";
+            oss << curr->number << " ";
             curr = curr->next;
         }
-        cout << endl;
+        return oss.str();
     }
     void push( int value ) {
         // Create new node
@@ -253,26 +255,26 @@ int main(void) {
 
     LinkedList list3{2, 3, 4, 5, 6};
 
-    list.print();
-    list2.print();
-    list3.print();
+    cout << list.toString() << endl;
+    cout << list2.toString() << endl;
+    cout << list3.toString() << endl;
 
     //list.moveFromList(list2); cout << "moved" << endl;
 
     list.removeDuplicates(); cout << "removed duplicates" << endl;
     list2.removeDuplicates(); cout << "removed duplicates" << endl;
-    list.print();
-    list2.print();
+    cout << list.toString() << endl;
+    cout << list2.toString() << endl;
 
     list.intersectFromList(list2); cout << "intersected" << endl;
-    list.print();
-    list2.print();
+    cout << list.toString() << endl;
+    cout << list2.toString() << endl;
 
     list.reverse(); cout << "reversed" << endl;
-    list.print();
+    cout << list.toString() << endl;
 
     list.reverseRestricted(); cout << "reversed restricted" << endl;
-    list.print();
+    cout << list.toString() << endl;
 
     return 0;
 }

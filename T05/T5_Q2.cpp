@@ -1,5 +1,6 @@
 #include <iostream>
 #include <initializer_list>
+#include <string>
 
 using namespace std;
 
@@ -33,18 +34,19 @@ public:
         delete _head;
         _head = NULL;
     }
-    void print() {
+    string toString() {
+        ostringstream oss;
         if (_head == NULL) {
             return;
         }
         Node* curr = _head;
-        cout << curr->number << " ";
+        oss << curr->number << " ";
         curr = curr->next;
         while (curr != _head) {
-            cout << curr->number << " ";
+            oss << curr->number << " ";
             curr = curr->next;
         }
-        cout << endl;
+        return oss.std();
     }
     void push(int value) {
         // Special case for empty list
@@ -152,18 +154,19 @@ int main(void) {
     list.push(3);
     list.push(2);
     list.push(1);
-    list.print();
+
+    cout << list.toString() << endl;
 
     CircularDoublyLinkedList list2{1, 2, 3, 4};
-    list2.print();
+    cout << list2.toString() << endl;
 
     cout << list.retrieve(4) << endl;
 
     list.remove(2);
     list.remove(3);
     list.push(2);
-    list.print();
+    cout << list.toString() << endl;
 
     list.reverse();
-    list.print();
+    cout << list.toString() << endl;
 }

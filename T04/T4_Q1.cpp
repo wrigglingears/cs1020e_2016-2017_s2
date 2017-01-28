@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class NusModule {
+class NUSModule {
 private:
     string _name;
     int _credits;
@@ -45,11 +45,11 @@ private:
     }
 
 public:
-    NusModule(string name, int credits, string grade = "F")
+    NUSModule(string name, int credits, string grade = "F")
     : _name(name), _credits(credits), _grade(grade) {
         _updatePoint();
     }
-    string getTotalInfo() {
+    string toString() {
         ostringstream oss;
         oss << _name << "(" << _credits << "): " << _grade << " = " << _point;
         return oss.str();
@@ -81,7 +81,7 @@ public:
     }
 };
 
-double calcCAP(NusModule moduleList[], int numModules) {
+double calcCAP(NUSModule moduleList[], int numModules) {
     double sumProducts = 0.0;
     int sumCredits = 0;
     for (int i = 0; i < numModules; ++i) {
@@ -92,17 +92,17 @@ double calcCAP(NusModule moduleList[], int numModules) {
 }
 
 int main(void) {
-    NusModule modules[3] {{"CS1010E", 4, "A+"},
+    NUSModule modules[3] {{"CS1010E", 4, "A+"},
                           {"CS1020E", 3, "B"},
                           {"CS2010",  4, "A-"}};
-    cout << modules[0].getTotalInfo() << endl;
-    cout << modules[1].getTotalInfo() << endl;
-    cout << modules[2].getTotalInfo() << endl;
+    cout << modules[0].toString() << endl;
+    cout << modules[1].toString() << endl;
+    cout << modules[2].toString() << endl;
     cout << calcCAP(modules, 3) << endl;
 
     modules[1].declareAsSU();
-    cout << modules[0].getTotalInfo() << endl;
-    cout << modules[1].getTotalInfo() << endl;
-    cout << modules[2].getTotalInfo() << endl;
+    cout << modules[0].toString() << endl;
+    cout << modules[1].toString() << endl;
+    cout << modules[2].toString() << endl;
     cout << calcCAP(modules, 3) << endl;
 }

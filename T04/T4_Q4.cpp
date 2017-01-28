@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -20,13 +22,14 @@ public:
         delete _head;
         _head = NULL;
     }
-    void print() {
+    string toString() {
+        ostringstream oss;
         Node* curr = _head;
         while (curr != NULL) {
-            cout << curr->number << " ";
+            oss << curr->number << " ";
             curr = curr->next;
         }
-        cout << endl;
+        return oss.str();
     }
     void push( int value ) {
         // Create new node
@@ -119,13 +122,13 @@ int main(void) {
     list2.push(2);
     list2.push(3);
 
-    list.print();
-    list2.print();
+    cout << list.toString() << endl;
+    cout << list2.toString() << endl;
 
     list.sort();
     list2.sort();
-    list.print();
-    list2.print();
+    cout << list.toString() << endl;
+    cout << list2.toString() << endl;
 
     return 0;
 }
