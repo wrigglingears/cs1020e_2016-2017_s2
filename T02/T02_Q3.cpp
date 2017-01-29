@@ -6,7 +6,7 @@ using namespace std;
 class Animal {
 public:
     Animal(string name, string sound)
-    : _name(name), _sound(sound) { }
+        : _name(name), _sound(sound) { }
 
     string getName() {
         return _name;
@@ -80,9 +80,8 @@ public:
 class OldMcDonald {
 public:
     OldMcDonald()
-    : _size(5) {
+        : _size(5) {
         _farm = new Animal*[_size];
-        fillThisFarm();
     }
 
     ~OldMcDonald() {
@@ -95,9 +94,7 @@ public:
     }
 
     void makeSomeNoise() {
-        for (int i = 0; i < _size; ++i) {
-            _farm[i]->makeSound();
-        }
+
     }
 
     void fillThisFarm() {
@@ -118,6 +115,7 @@ private:
 
 int main(void) {
     OldMcDonald farm;
+    farm.fillThisFarm();
     farm.makeSomeNoise();
     return 0;
 }
