@@ -1,16 +1,13 @@
 CC=g++
 CFLAGS=-std=c++11 -Wall
+TUT=T04
+QNS=1 2 4
 
-all: 1 2 4
+all: $(QNS)
+	echo All made!
 
-1: T4_Q1.cpp
-	$(CC) $(CFLAGS) $^ -o $@
-
-2: T4_Q2.cpp
-	$(CC) $(CFLAGS) $^ -o $@
-
-4: T4_Q4.cpp
-	$(CC) $(CFLAGS) $^ -o $@
+%:
+	$(CC) $(CFLAGS) $(TUT)_Q$@.cpp -o _run$@
 
 clean:
-	rm 1* 2* 4*
+	rm _run*

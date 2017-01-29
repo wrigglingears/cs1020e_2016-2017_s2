@@ -4,9 +4,10 @@ TUT=T02
 QNS=1 2 3
 
 all: $(QNS)
+	echo All made!
 
 %:
-	$(CC) $(CFLAGS) $(TUT)_Q$@.cpp -o _run_$@
+	$(CC) $(CFLAGS) $(TUT)_Q$@.cpp -o _run$@
 
 clean:
-	rm _run_*
+	rm _run*
