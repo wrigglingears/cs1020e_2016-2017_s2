@@ -1,6 +1,7 @@
 #include <iostream>
 #include <initializer_list>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -16,18 +17,25 @@ private:
         }
     };
     Node* _head;
+
 public:
     LinkedList() : _head(NULL) { }
+
+    // Allows us to initialise the LinkedList with a single statement
+    // rather than the long series of calls to push()
+    // makes testing easier
     LinkedList(initializer_list<int> initVals)
-    : LinkedList() {
+        : LinkedList() {
         for (int i = initVals.size() - 1; i >= 0; --i) {
             push(*(initVals.begin() + i));
         }
     }
+
     ~LinkedList() {
         delete _head;
         _head = NULL;
     }
+
     string toString() {
         ostringstream oss;
         Node* curr = _head;
@@ -37,6 +45,7 @@ public:
         }
         return oss.str();
     }
+
     void push( int value ) {
         // Create new node
         Node* temp = new Node;
@@ -45,6 +54,7 @@ public:
         temp->next = _head;
         _head = temp;
     }
+
     void pop() {
         // Check if we have a node to delete
         if (_head != NULL) {
@@ -57,6 +67,7 @@ public:
             delete temp;
         }
     }
+
     int retrieve( int idx ) {
         Node* curr = _head;
         for (int i = 0; curr != NULL; ++i, curr = curr->next) {
@@ -66,6 +77,7 @@ public:
         }
         return -1;
     }
+
     void remove( int idx ) {
         Node* curr = _head;
         Node* prev = NULL;
@@ -80,6 +92,7 @@ public:
             }
         }
     }
+
     void sort() {
         // 0 or 1 node, automatically sorted
         if (_head == NULL || _head->next == NULL) {
@@ -106,6 +119,7 @@ public:
             }
         }
     }
+
     void moveFromList( LinkedList& list2 ) {
         // Delete our list
         delete _head;
@@ -115,6 +129,7 @@ public:
         // Empty other list
         list2._head = NULL;
     }
+
     void intersectFromList( LinkedList& list2 ) {
         Node* p1 = _head;
         Node* p2 = list2._head;
@@ -177,6 +192,7 @@ public:
         // Clear up list2
         list2._head = NULL;
     }
+
     void reverse() {
         // Special case for list of size 0/1
         if (_head == NULL || _head->next == NULL) {
@@ -197,6 +213,7 @@ public:
         // New head
         _head = prev;
     }
+
     void reverseRestricted() {
         LinkedList resultList;
         while (_head != NULL) {
@@ -205,6 +222,7 @@ public:
         }
         moveFromList(resultList);
     }
+
     void removeDuplicates() {
         if (_head == NULL) {
             return;
@@ -253,18 +271,19 @@ int main(void) {
     list2.push(4);
     list2.push(3);
 
-    LinkedList list3{2, 3, 4, 5, 6};
+    LinkedList list3{1, 2, 3, 5};
 
     cout << list.toString() << endl;
     cout << list2.toString() << endl;
     cout << list3.toString() << endl;
 
-    //list.moveFromList(list2); cout << "moved" << endl;
-
     list.removeDuplicates(); cout << "removed duplicates" << endl;
     list2.removeDuplicates(); cout << "removed duplicates" << endl;
     cout << list.toString() << endl;
     cout << list2.toString() << endl;
+
+    list.moveFromList(list3); cout << "moved" << endl;
+    cout << list.toString() << endl;
 
     list.intersectFromList(list2); cout << "intersected" << endl;
     cout << list.toString() << endl;

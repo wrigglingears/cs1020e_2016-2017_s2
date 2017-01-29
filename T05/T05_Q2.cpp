@@ -1,6 +1,7 @@
 #include <iostream>
 #include <initializer_list>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -18,14 +19,20 @@ private:
         }
     };
     Node* _head;
+
 public:
     CircularDoublyLinkedList() : _head(NULL) {}
+
+    // Allows us to initialise the LinkedList with a single statement
+    // rather than the long series of calls to push()
+    // makes testing easier
     CircularDoublyLinkedList(initializer_list<int> initVals)
-    : _head(NULL) {
+        : _head(NULL) {
         for (int i = initVals.size() - 1; i >= 0; --i) {
             push(*(initVals.begin() + i));
         }
     }
+
     ~CircularDoublyLinkedList() {
         // Turn list from circular to standard list
         if (_head != NULL) {
@@ -34,10 +41,11 @@ public:
         delete _head;
         _head = NULL;
     }
+
     string toString() {
         ostringstream oss;
         if (_head == NULL) {
-            return;
+            return "";
         }
         Node* curr = _head;
         oss << curr->number << " ";
@@ -46,8 +54,9 @@ public:
             oss << curr->number << " ";
             curr = curr->next;
         }
-        return oss.std();
+        return oss.str();
     }
+
     void push(int value) {
         // Special case for empty list
         if (_head == NULL) {
@@ -67,6 +76,7 @@ public:
         _head->prev = temp;
         _head = temp;
     }
+
     void pop() {
         // Special case for list of size 0
         if (_head == NULL) {
@@ -88,6 +98,7 @@ public:
         temp->next = NULL;
         delete temp;
     }
+
     int retrieve(int idx) {
         if (_head == NULL) {
             return -1;
@@ -103,6 +114,7 @@ public:
         }
         return -1;
     }
+
     void remove(int idx) {
         if (_head == NULL) {
             return;
@@ -125,6 +137,7 @@ public:
         }
         return;
     }
+
     void reverse() {
         // Size 0 or 1, no need to reverse
         if (_head == NULL || _head->next == NULL) {

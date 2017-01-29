@@ -16,6 +16,7 @@ private:
         }
     };
     Node* _head;
+
 public:
     LinkedList() : _head(NULL) {}
 
