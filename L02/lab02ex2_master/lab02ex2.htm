@@ -1,0 +1,551 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0mm;
+	margin-right:0mm;
+	margin-bottom:10.0pt;
+	margin-left:0mm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+p.Default, li.Default, div.Default
+	{mso-style-name:Default;
+	margin:0mm;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:black;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-SG link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;text-justify:
+inter-ideograph;line-height:normal;page-break-after:avoid'><b><font size=5
+face="Times New Roman"><span lang=EN-US style='font-size:16.0pt;font-family:
+"Times New Roman","serif";font-weight:bold'>CS1020E | Lab 2 | Exercise 2</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;text-justify:
+inter-ideograph;line-height:normal;page-break-after:avoid'><b><font size=5
+face="Times New Roman"><span lang=EN-US style='font-size:16.0pt;font-family:
+"Times New Roman","serif";font-weight:bold'>Matrix Transformation</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Objective</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>The objective of this exercise is to practice basic OOP
+programming by defining and using simple classes.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Problem Description</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>Given a 2-dimensional square matrix, output the
+final state of the matrix after performing the given sequence of transformation
+operations. The followings are the valid operations:</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Times New Roman"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>1. </span></font><b><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New";font-weight:bold'>Rotate </span></font></b><i><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif";font-style:italic'>X</span></font></i></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:42.55pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Times New Roman"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>- Rotate the
+matrix by <i><span style='font-style:italic'>X</span></i> degrees clockwise, and
+<i><span style='font-style:italic'>X</span></i> can only be 90, 180, or 270.</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Times New Roman"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>2. </span></font><b><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New";font-weight:bold'>Reflect x</span></font></b></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:42.55pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Times New Roman"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>- Reflect the
+matrix about the <i><span style='font-style:italic'>x</span></i>-axis.</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Times New Roman"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>3. </span></font><b><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New";font-weight:bold'>Reflect y</span></font></b></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:42.55pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Times New Roman"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>- Reflect the
+matrix about the <i><span style='font-style:italic'>y</span></i>-axis.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>In your program, you may want to read each input transformation
+operation into a </span></font><font size=3 face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>string</span></font><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'> object, and you can compare the value in
+the </span></font><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>string</span></font><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'> object to a string literal using the </span></font><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New"'>==</span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'> operator,
+such as the followings:</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:10.0mm;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=2 face="Courier New"><span lang=EN-US
+style='font-size:11.0pt;font-family:"Courier New"'>string testStr;</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:10.0mm;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=2 face="Courier New"><span lang=EN-US
+style='font-size:11.0pt;font-family:"Courier New"'>cin &gt;&gt; testStr;</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:10.0mm;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=2 face="Courier New"><span lang=EN-US
+style='font-size:11.0pt;font-family:"Courier New"'>if (testStr == &quot;Good&quot;)
+...</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>For more info about the </span></font><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>string</span></font><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'> class, see </span></font><a
+href="http://www.cplusplus.com/reference/string/string/"><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>http://www.cplusplus.com/reference/string/string/</span></font></a><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Inputs</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>The first line of the input contains one integer <i><span
+style='font-style:italic'>N</span></i>, where 1 &lt;= <i><span
+style='font-style:italic'>N</span></i> &lt;= 100. The next <i><span
+style='font-style:italic'>N</span></i> lines contain the <i><span
+style='font-style:italic'>N</span></i> x <i><span style='font-style:italic'>N</span></i>
+integers of the matrix.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>The next line is an integer <i><span
+style='font-style:italic'>K</span></i>, where 1 &lt;= <i><span
+style='font-style:italic'>K</span></i> &lt;= 100, and it is the number of transformation
+operations to be performed.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>Each of the subsequent <i><span style='font-style:
+italic'>K</span></i> lines is the operation “</span></font><b><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+font-weight:bold'>Rotate</span></font></b><b><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'> </span></font></b><i><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif";
+font-style:italic'>X</span></font></i><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>” (where
+is <i><span style='font-style:italic'>X</span></i> is 90, 180 or 270), “</span></font><b><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New";font-weight:bold'>Reflect x</span></font></b><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>”, or “</span></font><b><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+font-weight:bold'>Reflect y</span></font></b><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>”.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Outputs</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>The output is the final state of the matrix after the
+given sequence of transformation operations.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Sample Input</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><b><font size=3
+color=red face="Courier New"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Courier New";color:red;font-weight:bold'>3</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><b><font size=3
+color=red face="Courier New"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Courier New";color:red;font-weight:bold'>1 2 3</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><b><font size=3
+color=red face="Courier New"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Courier New";color:red;font-weight:bold'>4 5 6</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><b><font size=3
+color=red face="Courier New"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Courier New";color:red;font-weight:bold'>7 8 9</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><b><font size=3
+color=red face="Courier New"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Courier New";color:red;font-weight:bold'>3</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><b><font size=3
+color=red face="Courier New"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Courier New";color:red;font-weight:bold'>Rotate 90</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><b><font size=3
+color=red face="Courier New"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Courier New";color:red;font-weight:bold'>Reflect x</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><b><font size=3
+color=red face="Courier New"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Courier New";color:red;font-weight:bold'>Reflect y</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>(<i><span style='font-style:italic'>User inputs are
+shown in <b><font color=red><span style='color:red;font-weight:bold'>bold red</span></font></b>.</span></i>)</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Sample Output</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>3
+6 9</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>2
+5 8</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>1
+4 7</span></font></p>
+
+<p class=Default><font size=3 color=black face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Explanation of Sample Output</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>1. Initial matrix: </span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>1 2 3</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>4 5 6</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>7 8 9</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>2. After 90 degrees rotation: </span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>7 4 1</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>8 5 2</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>9 6 3</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>3. After reflection about the <i><span
+style='font-style:italic'>x</span></i>-axis: </span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>9 6 3</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>8 5 2</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>7 4 1</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>4. After reflection about the <i><span
+style='font-style:italic'>y</span></i>-axis: </span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>3 6 9</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>2 5 8</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>1 4 7<a name="_GoBack"></a></span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Submission</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>You need to submit only your completed </span></font><b><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New";font-weight:bold'>Matrix.cpp</span></font></b><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>, </span></font><b><font size=3 face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";font-weight:bold'>Matrix.h</span></font></b><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>, and </span></font><b><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+font-weight:bold'>Transformation.cpp</span></font></b><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>  to CodeCrunch (</span></font><a
+href="https://codecrunch.comp.nus.edu.sg/"><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>https://codecrunch.comp.nus.edu.sg/</span></font></a><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>) before the specified deadline. We will
+take only your latest submission.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal;text-autospace:none'><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>Late
+submissions will not be accepted. The submission system in CodeCrunch will
+automatically close at the deadline.</span></font></p>
+
+</div>
+
+</body>
+
+</html>

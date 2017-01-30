@@ -4,6 +4,10 @@
 using namespace std;
 
 class Animal {
+protected:
+    string _name;
+    string _sound;
+
 public:
     Animal(string name, string sound)
         : _name(name), _sound(sound) { }
@@ -12,13 +16,9 @@ public:
         return _name;
     }
 
-    void makeSound() {
-        cout << _name << " goes " << _sound << endl;
+    string getSound() {
+        return _sound;
     }
-
-protected:
-    string _name;
-    string _sound;
 };
 
 class Flyer : public Animal {
@@ -31,12 +31,12 @@ public:
     Flyer(string name, string sound)
         : _name(name), _sound(sound), _isFlying(false) { }
 
-    void makeSound() {
+    string getSound() {
         if (_isFlying) {
-            cout << getName() << " goes flap flap" << endl;
+            return "flap";
         }
         else {
-            Animal::makeSound();
+            return Animal::getSound();
         }
     }
 
@@ -67,12 +67,12 @@ public:
         _isGliding = false;
     }
 
-    void makeSound() {
+    string getSound() {
         if (_isGliding) {
-            cout << getName() << " goes whoosh" << endl;
+            return "woosh";
         }
         else {
-            makeSound();
+            return getSound();
         }
     }
 };
@@ -93,8 +93,19 @@ public:
         _farm = NULL;
     }
 
-    void makeSomeNoise() {
+    void sing() {
+        for (int i = 0; i < _size; ++i) {
+            cout << "Old McDonald had a farm, E-I-E-I-O" << endl;
 
+            cout << "And on his farm he had a " << _farm[i]->getName() << ", E-I-E-I-O" << endl;
+
+            cout << "With a " << _farm[i]->getSound() << " " << _farm[i]->getSound();
+            cout << " here and a " << _farm[i]->getSound() << " " << _farm[i]->getSound() << " there" << endl;
+
+            cout << _farm[i]->getSound() << " here " << _farm[i]->getSound() << " there, everywhere " << _farm[i]->getSound() << " " << _farm[i]->getSound() << endl;
+
+            cout << "Old McDonald had a farm, E-I-E-I-O" << endl << endl;
+        }
     }
 
     void fillThisFarm() {
@@ -116,6 +127,6 @@ private:
 int main(void) {
     OldMcDonald farm;
     farm.fillThisFarm();
-    farm.makeSomeNoise();
+    farm.sing();
     return 0;
 }
