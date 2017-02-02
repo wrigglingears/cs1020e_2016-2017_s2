@@ -78,6 +78,10 @@ public:
 };
 
 class OldMcDonald {
+private:
+    Animal** _farm;
+    const int _size;
+    
 public:
     OldMcDonald()
         : _size(5) {
@@ -117,11 +121,6 @@ public:
         _farm[4] = new Flyer("Fish", "blurp");
 
     }
-
-private:
-    Animal** _farm;
-    const int _size;
-
 };
 
 int main(void) {
