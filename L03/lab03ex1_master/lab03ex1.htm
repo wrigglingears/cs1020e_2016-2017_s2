@@ -1,0 +1,399 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0mm;
+	margin-right:0mm;
+	margin-bottom:10.0pt;
+	margin-left:0mm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-SG link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;text-justify:
+inter-ideograph;line-height:normal;page-break-after:avoid'><b><font size=5
+face="Times New Roman"><span lang=EN-US style='font-size:16.0pt;font-family:
+"Times New Roman","serif";font-weight:bold'>CS1020E | Lab 3 | Exercise 1</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;text-justify:
+inter-ideograph;line-height:normal;page-break-after:avoid'><b><font size=5
+face="Times New Roman"><span lang=EN-US style='font-size:16.0pt;font-family:
+"Times New Roman","serif";font-weight:bold'>Substring Removal</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Objective</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>The objective of this exercise is to learn how to
+perform C-style string manipulation.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Problem Description</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>Given a string <i><span style='font-style:italic'>S</span></i>
+and a string <i><span style='font-style:italic'>T</span></i>, we want to remove
+from <i><span style='font-style:italic'>S</span></i> all occurrences of <i><span
+style='font-style:italic'>T</span></i>. Each occurrence of <i><span
+style='font-style:italic'>T</span></i> in <i><span style='font-style:italic'>S</span></i>
+must always match the left-most occurrence without overlapping the earlier
+occurrences. For example, if <i><span style='font-style:italic'>S</span></i> is
+</span></font><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>&quot;xabababay&quot;</span></font><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'> and <i><span style='font-style:italic'>T</span></i>
+is </span></font><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>&quot;aba&quot;</span></font><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>, then the occurrences are those
+underlined in </span></font><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>&quot;x<b><u><span
+style='font-weight:bold'>aba</span></u></b>b<b><u><span style='font-weight:
+bold'>aba</span></u></b>y&quot;</span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>, and
+the result of <i><span style='font-style:italic'>S</span></i> is </span></font><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New"'>&quot;xby&quot;</span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'> after
+the removal of all the substrings </span></font><font size=3 face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>&quot;aba&quot;</span></font><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>The matching and removal of substrings in <i><span
+style='font-style:italic'>S</span></i> is only &quot;one-pass&quot;. For
+example, if <i><span style='font-style:italic'>S</span></i> is </span></font><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New"'>&quot;aabcbabcc&quot;</span></font><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'> and <i><span style='font-style:italic'>T</span></i>
+is </span></font><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>&quot;abc&quot;</span></font><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>, the final result of <i><span
+style='font-style:italic'>S</span></i> is </span></font><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>&quot;abc&quot;</span></font><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>. The final result </span></font><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New"'>&quot;abc&quot;</span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+should not be further matched and removed.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>Complete the given C++ program </span></font><b><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New";font-weight:bold'>RemoveSubstring.cpp</span></font></b><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'> to achieve the requirements. All the
+strings must be represented using C-style null-terminated </span></font><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New"'>char</span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+arrays. Besides the use of </span></font><font size=3 face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>cin</span></font><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'> for reading input and </span></font><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New"'>cout</span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'> for
+displaying result, <b><span style='font-weight:bold'>you are not allowed to use
+any other C/C++ built-in functions and classes/objects</span></b>. You should
+break your solution into well-defined functions.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Inputs</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>The first line contains the string <i><span
+style='font-style:italic'>S</span></i> and the second line contains the string <i><span
+style='font-style:italic'>T</span></i>. Both input strings do not contain any
+white space. The length of each input string can be from 1 to 100.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Outputs</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>The output is just one single line containing the
+final result string enclosed by two </span></font><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>&quot;</span></font><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Sample Run 1</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>xabababay</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>aba</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>&quot;xby&quot;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>(<i><span style='font-style:italic'>User inputs are
+shown in <b><font color=red><span style='color:red;font-weight:bold'>bold red</span></font></b>.</span></i>)</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<b><font size=4 face="Times New Roman"><span lang=EN-US style='font-size:14.0pt;
+line-height:115%;font-family:"Times New Roman","serif";font-weight:bold'><br
+clear=all style='page-break-before:always'>
+</span></font></b>
+
+<p class=MsoNormal><b><font size=4 face="Times New Roman"><span lang=EN-US
+style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+font-weight:bold'>&nbsp;</span></font></b></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Sample Run 2</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>aabcbabcc</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>abc</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>&quot;abc&quot;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>(<i><span style='font-style:italic'>User inputs are
+shown in <b><font color=red><span style='color:red;font-weight:bold'>bold red</span></font></b>.</span></i>)</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Sample Run 3</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>xyzxyz</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>xyz</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>&quot;&quot;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>(<i><span style='font-style:italic'>User inputs are
+shown in <b><font color=red><span style='color:red;font-weight:bold'>bold red</span></font></b>.</span></i>)</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Submission</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>You need to submit only your completed </span></font><b><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New";font-weight:bold'>RemoveSubstring.cpp</span></font></b><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>. to CodeCrunch (</span></font><a
+href="https://codecrunch.comp.nus.edu.sg/"><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>https://codecrunch.comp.nus.edu.sg/</span></font></a><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>) before the specified deadline. We will
+take only your latest submission.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal;text-autospace:none'><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>Late
+submissions will not be accepted. The submission system in CodeCrunch will
+automatically close at the deadline.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+</div>
+
+</body>
+
+</html>

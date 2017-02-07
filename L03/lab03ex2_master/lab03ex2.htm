@@ -1,0 +1,525 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Microsoft YaHei UI";}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"\@Microsoft YaHei UI";}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0mm;
+	margin-right:0mm;
+	margin-bottom:10.0pt;
+	margin-left:0mm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0mm;}
+ul
+	{margin-bottom:0mm;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-SG link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;text-justify:
+inter-ideograph;line-height:normal;page-break-after:avoid'><b><font size=5
+face="Times New Roman"><span lang=EN-US style='font-size:16.0pt;font-family:
+"Times New Roman","serif";font-weight:bold'>CS1020E | Lab 3 | Exercise 2</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;text-justify:
+inter-ideograph;line-height:normal;page-break-after:avoid'><b><font size=5
+face="Times New Roman"><span lang=EN-US style='font-size:16.0pt;font-family:
+"Times New Roman","serif";font-weight:bold'>Finding Words</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Objective</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>The objective of this exercise is to learn how to
+use the </span></font><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>string</span></font><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'> class.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Problem Description</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>You subscribed to a local newspaper that has a
+weekly puzzle. In the puzzle, you are given a <i><span style='font-style:italic'>R</span></i>*<i><span
+style='font-style:italic'>C</span></i> matrix with each cell consists of a
+single lowercase alphabet letter. In the matrix, adjacent characters may form
+words when read in the following directions:</span></font></p>
+
+<ul style='margin-top:0mm' type=disc>
+ <li class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+     justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+     face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+     font-family:"Times New Roman","serif"'>Horizontally</span></font></li>
+</ul>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:20.0mm;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-21.25pt;line-height:normal'><font size=3 face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>o<font size=1
+face="Times New Roman"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></font></span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>from
+left to the right, or</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:20.0mm;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-21.25pt;line-height:normal'><font size=3 face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>o<font size=1
+face="Times New Roman"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></font></span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>from
+right to the left</span></font></p>
+
+<ul style='margin-top:0mm' type=disc>
+ <li class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+     justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+     face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+     font-family:"Times New Roman","serif"'>Vertically</span></font></li>
+</ul>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:20.0mm;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-21.25pt;line-height:normal'><font size=3 face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>o<font size=1
+face="Times New Roman"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></font></span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>from
+top to the bottom, or</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:20.0mm;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-21.25pt;line-height:normal'><font size=3 face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>o<font size=1
+face="Times New Roman"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></font></span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>from
+bottom to the top</span></font></p>
+
+<ul style='margin-top:0mm' type=disc>
+ <li class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+     justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+     face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+     font-family:"Times New Roman","serif"'>Diagonally</span></font></li>
+</ul>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:20.0mm;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-21.25pt;line-height:normal'><font size=3 face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>o<font size=1
+face="Times New Roman"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></font></span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>from
+top-left to the bottom-right, or</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:20.0mm;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-21.25pt;line-height:normal'><font size=3 face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>o<font size=1
+face="Times New Roman"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></font></span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>from
+top-right to the bottom-left, or</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:20.0mm;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-21.25pt;line-height:normal'><font size=3 face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>o<font size=1
+face="Times New Roman"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></font></span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>from
+bottom-left to the top-right, or</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:20.0mm;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-21.25pt;line-height:normal'><font size=3 face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>o<font size=1
+face="Times New Roman"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></font></span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>from
+bottom-right to the top-left</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>In the puzzle, you are also given <i><span
+style='font-style:italic'>N</span></i> words. You have to determine whether
+each word exists in the matrix. You think that this puzzle is too hard for you,
+especially when the size of the matrix is big. Therefore, you decide to write a
+program that can helps you.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>Add your code to the given skeleton. <b><span
+style='font-weight:bold'>You MUST use a </span></b></span></font><b><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New";font-weight:bold'>string</span></font></b><b><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif";font-weight:bold'> object to store each row of the
+given matrix and<a name="_GoBack"></a> each of the given words.</span></font></b><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'> You are free to use any method in the </span></font><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New"'>string</span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+class. For details of the </span></font><font size=3 face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>string</span></font><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'> class, please refer to</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=2
+face=Calibri><span style='font-size:11.0pt'><a
+href="http://www.cplusplus.com/reference/string/string/" target="_blank"><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>http://www.cplusplus.com/reference/string/string/</span></font></a></span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=2
+face=Calibri><span style='font-size:11.0pt'><a
+href="http://en.cppreference.com/w/cpp/string/basic_string" target="_blank"><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>http://en.cppreference.com/w/cpp/string/basic_string</span></font></a></span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Inputs</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>The first line consists of two integers separated by
+a single space. They represent <i><span style='font-style:italic'>R</span></i>
+and <i><span style='font-style:italic'>C</span></i> respectively.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>The next <i><span style='font-style:italic'>R</span></i>
+lines contain the matrix, where each line has <i><span style='font-style:italic'>C</span></i>
+characters.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>The next line consists of a single integer
+representing <i><span style='font-style:italic'>N</span></i>.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>The next <i><span style='font-style:italic'>N</span></i>
+lines, each consists of a string that represents a query word.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><i><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif";font-style:italic'>N</span></font></i><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'> is between 1 and 100 inclusive.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><i><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif";font-style:italic'>R</span></font></i><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'> and <i><span style='font-style:italic'>C</span></i>
+are between 1 and 100 inclusive.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>Each word in the query consists of only lowercase
+alphabet and has length between 1 and 100 characters inclusive.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Outputs</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>For each query, you have to output &quot;</span></font><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New"'>YES</span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&quot;
+(without quote) if the query word exists in the matrix, or &quot;</span></font><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New"'>NO</span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&quot;
+(without quote) otherwise.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Sample Run</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red'>7 8</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red'>xassddq<b><span
+style='font-weight:bold'>s</span></b></span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>g</span></font></b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red'>zccdsx<b><span
+style='font-weight:bold'>u</span></b></span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>jonathan</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red'>da<b><span
+style='font-weight:bold'>c</span></b>zzzz<b><span style='font-weight:bold'>t</span></b></span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red'>wpl<b><span
+style='font-weight:bold'>o</span></b>fee<b><span style='font-weight:bold'>e</span></b></span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red'>cadd<b><span
+style='font-weight:bold'>d</span></b>em<b><span style='font-weight:bold'>c</span></b></span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red'>aweqa<b><span
+style='font-weight:bold'>edk</span></b></span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red'>6</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red'>jonathan</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red'>kde</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red'>gnu</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red'>gocode</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red'>sunteck</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red'>cstentwenty</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>YES</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>YES</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>NO</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>YES</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>YES</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>NO</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>(<i><span style='font-style:italic'>User inputs are
+shown in <b><font color=red><span style='color:red;font-weight:bold'>red</span></font></b>.</span></i>)</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Submission</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>You need to submit only your completed </span></font><b><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New";font-weight:bold'>findwords.cpp</span></font></b><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'> to CodeCrunch (</span></font><a
+href="https://codecrunch.comp.nus.edu.sg/"><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>https://codecrunch.comp.nus.edu.sg/</span></font></a><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>) before the specified deadline. We will
+take only your latest submission.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal;text-autospace:none'><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>Late
+submissions will not be accepted. The submission system in CodeCrunch will
+automatically close at the deadline.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+</div>
+
+</body>
+
+</html>

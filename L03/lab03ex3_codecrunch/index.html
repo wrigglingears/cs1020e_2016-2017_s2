@@ -1,0 +1,587 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Microsoft YaHei UI";}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"\@Microsoft YaHei UI";}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0mm;
+	margin-right:0mm;
+	margin-bottom:10.0pt;
+	margin-left:0mm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-SG link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;text-justify:
+inter-ideograph;line-height:normal;page-break-after:avoid'><b><font size=5
+face="Times New Roman"><span lang=EN-US style='font-size:16.0pt;font-family:
+"Times New Roman","serif";font-weight:bold'>CS1020E | Lab 3 | Exercise 3   (will
+not be graded)</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;text-justify:
+inter-ideograph;line-height:normal;page-break-after:avoid'><b><font size=5
+face="Times New Roman"><span lang=EN-US style='font-size:16.0pt;font-family:
+"Times New Roman","serif";font-weight:bold'>Restaurant</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Objective</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>The objective of this exercise is to learn to use
+the </span></font><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>vector</span></font><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'> class as well as to practice for the </span></font><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New"'>string</span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+class.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Problem Description</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>You have been asked to help out in a restaurant. The
+restaurant has <i><span style='font-style:italic'>N</span></i> tables. Each of
+them has a name and a capacity. The name for a table is unique. The names are
+composed of lowercase English letters (‘a’-‘z’).</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>During the day, groups of people can come and go.
+Like the tables, each group has a name, and a number of people. Again, the
+names are composed of lowercase English letters (‘a’-’z’). Some groups have a
+favorite table: they only want to sit at their favorite table. For the other
+groups, we allocate the table that has the lexicographically smallest name
+among the available tables.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>Each table can only have one group at one time.
+Moreover, the capacity of the table must not be less than the number of people
+in the group.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>During the day, there will be <i><span
+style='font-style:italic'>Q</span></i> queries for you to answer. There are 5
+types of queries:</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:10.0mm;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-14.15pt;line-height:normal'><font size=3 face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>1<i><span
+style='font-style:italic'> GROUP_NAME NUM_PEOPLE TABLE_NAME</span></i></span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Times New Roman"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>A group with the
+name </span></font><i><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New";font-style:italic'>GROUP_NAME</span></font></i><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'> and </span></font><i><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+font-style:italic'>NUM_PEOPLE</span></font></i><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'> persons arrived. They only want to sit in table </span></font><i><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New";font-style:italic'>TABLE_NAME</span></font></i><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>. Output </span></font><i><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+font-style:italic'>TABLE_NAME</span></font></i><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'> if you can put the group at that table, and “</span></font><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New"'>not possible</span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>” if
+you cannot.</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:10.0mm;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-14.15pt;line-height:normal'><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:10.0mm;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-14.15pt;line-height:normal'><font size=3 face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>2<i><span
+style='font-style:italic'> GROUP_NAME NUM_PEOPLE</span></i></span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Times New Roman"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>A group with the
+name </span></font><i><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New";font-style:italic'>GROUP_NAME</span></font></i><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'> and </span></font><i><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+font-style:italic'>NUM_PEOPLE</span></font></i><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'> persons arrived. They do not have any favorite
+table, so you allocate them to the table with the lexicographically smallest
+name that you can use. Output the name of the table if you can find such a
+table, and “</span></font><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New"'>not possible</span></font><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>” if you cannot find any table for this
+group.</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:10.0mm;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-14.15pt;line-height:normal'><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:10.0mm;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-14.15pt;line-height:normal'><font size=3 face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>3<i><span
+style='font-style:italic'> GROUP_NAME</span></i></span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Times New Roman"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>A group with the
+name </span></font><i><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Courier New";font-style:italic'>GROUP_NAME</span></font></i><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'> leaves the restaurant, if they are
+still inside. The table that the group occupied can be used after this.</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:10.0mm;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-14.15pt;line-height:normal'><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:10.0mm;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-14.15pt;line-height:normal'><font size=3 face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>4<i><span
+style='font-style:italic'> GROUP_NAME</span></i></span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Times New Roman"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>Output the name
+of the table the group is assigned to. If there is no group with that name
+inside the restaurant right now, output “</span></font><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>invalid</span></font><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>”.</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:10.0mm;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-14.15pt;line-height:normal'><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<font size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;
+line-height:115%;font-family:"Courier New"'><br clear=all style='page-break-before:
+always'>
+</span></font>
+
+<p class=MsoNormal><font size=3 face="Courier New"><span lang=EN-US
+style='font-size:12.0pt;line-height:115%;font-family:"Courier New"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:10.0mm;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-14.15pt;line-height:normal'><font size=3 face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>5<i><span
+style='font-style:italic'> TABLE_NAME</span></i></span></font></p>
+
+<p class=MsoNormal style='margin-top:0mm;margin-right:0mm;margin-bottom:0mm;
+margin-left:35.45pt;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+line-height:normal'><font size=3 face="Times New Roman"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>Output the name
+of the group at the table. If there is no table with that name or no group in
+that table, output “</span></font><font size=3 face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>invalid</span></font><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>”.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>Add your code to the given skeleton.</span></font><span
+lang=EN-US> </span><font size=3 face="Times New Roman"><span lang=EN-US
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>You can use </span></font><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New"'>vector</span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+objects to manage the groups and tables. For details of the </span></font><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New"'>vector</span></font><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'> class,
+please refer to</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=2
+face=Calibri><span style='font-size:11.0pt'><a
+href="http://www.cplusplus.com/reference/vector/vector/" target="_blank"><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>http://www.cplusplus.com/reference/vector/vector/</span></font></a></span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=2
+face=Calibri><span style='font-size:11.0pt'><a
+href="http://en.cppreference.com/w/cpp/container/vector" target="_blank"><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>http://en.cppreference.com/w/cpp/container/vector</span></font></a></span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Inputs</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>The first line contains <i><span style='font-style:
+italic'>N</span></i>, the number of tables in the restaurant.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>The next <i><span style='font-style:italic'>N</span></i>
+lines each contains a string and an integer—the name and capacity of each
+table.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>The next line contains <i><span style='font-style:
+italic'>Q</span></i>, the number of queries.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>The next <i><span style='font-style:italic'>Q</span></i>
+lines each contains a query in the format described above.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Outputs</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>For each query of type 1, 2, 4, or 5, output a line
+containing the result of the query.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0mm;margin-bottom:6.0pt;
+margin-left:0mm;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Sample Run</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>4</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>a 5</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>b 4</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>c 1</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>d 2</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>9</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>1 ann 3 a</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>2 bob 2</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>2 charles 2</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>1 donny 2 c</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>4 ann</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>5 a</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>3 ann</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>1 eames 5 a</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><font size=3 color=red face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";color:red;
+font-weight:bold'>4 random</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>a</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>b</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>d</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>not
+possible</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>a</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>ann</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>a</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New"'>invalid</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>(<i><span style='font-style:italic'>User inputs are
+shown in <b><font color=red><span style='color:red;font-weight:bold'>bold red</span></font></b>.</span></i>)</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<b><font size=4 face="Times New Roman"><span lang=EN-US style='font-size:14.0pt;
+line-height:115%;font-family:"Times New Roman","serif";font-weight:bold'><br
+clear=all style='page-break-before:always'>
+</span></font></b>
+
+<p class=MsoNormal><b><font size=4 face="Times New Roman"><span lang=EN-US
+style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+font-weight:bold'>&nbsp;</span></font></b></p>
+
+<p class=MsoNormal><b><font size=4 face="Times New Roman"><span lang=EN-US
+style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+font-weight:bold'>Submission</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>You need to submit all your completed </span></font><b><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New";font-weight:bold'>Group.cpp</span></font></b><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>, </span></font><b><font size=3 face="Courier New"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Courier New";font-weight:bold'>Group.h</span></font></b><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>, </span></font><b><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+font-weight:bold'>Table.cpp</span></font></b><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>, </span></font><b><font
+size=3 face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Courier New";font-weight:bold'>Table.h</span></font></b><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>, and </span></font><b><font size=3
+face="Courier New"><span lang=EN-US style='font-size:12.0pt;font-family:"Courier New";
+font-weight:bold'>Restaurant.cpp</span></font></b><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'> to CodeCrunch (</span></font><a
+href="https://codecrunch.comp.nus.edu.sg/"><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>https://codecrunch.comp.nus.edu.sg/</span></font></a><font
+size=3 face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>).</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><b><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif";font-weight:bold'>Your submission for this exercise
+will not be manually graded, and there is no submission deadline for this
+exercise.</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0mm;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-US style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+</div>
+
+</body>
+
+</html>
