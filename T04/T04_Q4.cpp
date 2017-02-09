@@ -27,10 +27,8 @@ public:
 
     string toString() {
         ostringstream oss;
-        Node* curr = _head;
-        while (curr != NULL) {
+        for (Node* curr = _head; curr != NULL; curr = curr->next) {
             oss << curr->number << " ";
-            curr = curr->next;
         }
         return oss.str();
     }
@@ -112,31 +110,40 @@ public:
 
 int main(void) {
     LinkedList list;
-    list.push(5);
-    list.push(4);
-    list.push(4);
-    list.push(4);
-    list.push(4);
-    list.push(3);
+    list.push(10);
+    list.push(24);
+    list.push(8);
     list.push(2);
-    list.push(2);
-    list.push(1);
-    list.push(1);
+    list.push(16);
+    list.push(99);
+    list.push(48);
+    list.push(73);
+    list.push(33);
+    list.push(61);
 
-    LinkedList list2;
-    list2.push(6);
-    list2.push(5);
-    list2.push(4);
-    list2.push(2);
-    list2.push(3);
-
-    cout << list.toString() << endl;
-    cout << list2.toString() << endl;
+    cout << "Initial list" << endl;
+    cout << list.toString() << endl << endl;
 
     list.sort();
-    list2.sort();
-    cout << list.toString() << endl;
-    cout << list2.toString() << endl;
+    cout << "After sorting" << endl;
+    cout << list.toString() << endl << endl;
+
+    list.remove(3);
+    list.remove(5);
+    cout << "After removing index 3, then index 5" << endl;
+    cout << list.toString() << endl << endl;
+
+    list.pop();
+    list.pop();
+    cout << "After popping twice" << endl;
+    cout << list.toString() << endl << endl;
+
+    cout << "Retrieving by index (very careful not to go beyond size)" << endl;
+    // Should have 6 left
+    for (int i = 0; i < 6; ++i) {
+        cout << list.retrieve(i) << " ";
+    }
+    cout << endl;
 
     return 0;
 }

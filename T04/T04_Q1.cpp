@@ -97,17 +97,22 @@ double calcCAP(NUSModule moduleList[], int numModules) {
 }
 
 int main(void) {
-    NUSModule modules[3] {{"CS1010E", 4, "A+"},
-                          {"CS1020E", 3, "B"},
-                          {"CS2010",  4, "A-"}};
-    cout << modules[0].toString() << endl;
-    cout << modules[1].toString() << endl;
-    cout << modules[2].toString() << endl;
-    cout << calcCAP(modules, 3) << endl;
+    const int num_modules = 4;
+    NUSModule modules[num_modules] {{"CS1010E", 4, "A+"},
+                                    {"AA2001" , 3, "C"},
+                                    {"CS1020E", 4, "A+"},
+                                    {"BB3002" , 4, "A-"}};
+
+    cout << "Initial module list" << endl;
+    for (int i = 0; i < num_modules; ++i) {
+        cout << modules[i].toString() << endl;
+    }
+    cout << "CAP = " << calcCAP(modules, num_modules) << endl << endl;
 
     modules[1].declareAsSU();
-    cout << modules[0].toString() << endl;
-    cout << modules[1].toString() << endl;
-    cout << modules[2].toString() << endl;
-    cout << calcCAP(modules, 3) << endl;
+    cout << "After S/U declaration" << endl;
+    for (int i = 0; i < num_modules; ++i) {
+        cout << modules[i].toString() << endl;
+    }
+    cout << "CAP = " << calcCAP(modules, num_modules) << endl;
 }
