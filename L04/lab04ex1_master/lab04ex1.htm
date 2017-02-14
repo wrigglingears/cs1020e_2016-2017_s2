@@ -1,0 +1,492 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:"Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	text-indent:21.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+p.Body, li.Body, div.Body
+	{mso-style-name:Body;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	color:black;
+	border:none;}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;text-justify:
+inter-ideograph;line-height:normal;page-break-after:avoid'><b><font size=5
+face="Times New Roman"><span style='font-size:16.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>CS1020E | Lab 4 | Exercise 1</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;text-justify:
+inter-ideograph;line-height:normal;page-break-after:avoid'><b><font size=5
+face="Times New Roman"><span style='font-size:16.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Social Network</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Objective</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>The
+objective of this exercise is to practice OOP and learn to use the STL </span></font><font
+size=3 face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>vector</span></font><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+class.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Problem
+Description</span></font></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Times New Roman","serif"'>In a social network, people can create,
+join and quit groups. We are interested in knowing:</span></font></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:30.0pt;text-align:justify;
+text-justify:inter-ideograph;text-indent:-.25in'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Times New Roman","serif"'>1.<font size=1 face="Times New Roman"><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></font></span></font><b><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Times New Roman","serif";font-weight:bold'>Which group</span></font></b><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Times New Roman","serif"'> has the maximum number of members.</span></font></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:30.0pt;text-align:justify;
+text-justify:inter-ideograph;text-indent:-.25in'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Times New Roman","serif"'>2.<font size=1 face="Times New Roman"><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></font></span></font><b><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Times New Roman","serif";font-weight:bold'>Who</span></font></b><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Times New Roman","serif"'> knows the maximum number of people in
+the social network.</span></font></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Times New Roman","serif"'>We assume that people in the social
+network know each other if and only if they are in some common group. We say
+that two persons <i><span style='font-style:italic'>A</span></i> and <i><span
+style='font-style:italic'>B</span></i> know each other <i><span
+style='font-style:italic'>via</span></i> Group <i><span style='font-style:italic'>G</span></i>,
+if and only if both <i><span style='font-style:italic'>A</span></i> and <i><span
+style='font-style:italic'>B</span></i> are in Group <i><span style='font-style:
+italic'>G</span></i>. </span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>In
+this Lab exercise, we will implement such a system that answers the above two
+types of questions, as well as simulates the users’ creating, joining and
+quitting groups.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><b><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Add your code only to the parts of the files indicated. Do
+not modify any other part of the given code, and do not add new files.</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Inputs</span></font></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Times New Roman","serif"'>The first line of the input contains an
+integer <i><span style='font-style:italic'>N</span></i> (<i><span
+style='font-style:italic'>N</span></i> &lt;= 500), which is the number of
+operations. </span></font></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+text-indent:12.0pt'><font size=3 face="Times New Roman"><span style='font-size:
+12.0pt;line-height:115%;font-family:"Times New Roman","serif"'>Each of the <i><span
+style='font-style:italic'>N</span></i> lines followed is in one of the
+following forms:</span></font></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:30.0pt;text-align:justify;
+text-justify:inter-ideograph;text-indent:-.25in'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Times New Roman","serif"'>1.<font size=1 face="Times New Roman"><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></font></span></font><b><font
+size=3 face="Courier New"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Courier New";font-weight:bold'>Createjoin<i><span
+style='font-style:italic'> </span></i></span></font></b><b><i><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Times New Roman","serif";font-weight:bold;font-style:italic'>A</span></font></i></b><b><i><font
+size=3 face="Courier New"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Courier New";font-weight:bold;font-style:italic'> </span></font></i></b><b><i><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Times New Roman","serif";font-weight:bold;font-style:italic'>G</span></font></i></b><i><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Times New Roman","serif";font-style:italic'>.</span></font></i><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Times New Roman","serif"'>  Person <i><span style='font-style:
+italic'>A</span></i> joins Group <i><span style='font-style:italic'>G</span></i>.
+If <i><span style='font-style:italic'>G</span></i> does not exist yet, then <i><span
+style='font-style:italic'>A </span></i>creates <i><span style='font-style:italic'>G</span></i>
+first and then joins it. <i><span style='font-style:italic'>A</span></i> and <i><span
+style='font-style:italic'>G</span></i> are names (strings). If <i><span
+style='font-style:italic'>A</span></i> is already in <i><span style='font-style:
+italic'>G</span></i>, the input will not have record of him/her joining <i><span
+style='font-style:italic'>G</span></i> again, unless he/she has quit from <i><span
+style='font-style:italic'>G</span></i>.</span></font></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:30.0pt;text-align:justify;
+text-justify:inter-ideograph;text-indent:-.25in'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Times New Roman","serif"'>2.<font size=1 face="Times New Roman"><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></font></span></font><b><font
+size=3 face="Courier New"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Courier New";font-weight:bold'>Quit<i><span style='font-style:
+italic'> </span></i></span></font></b><b><i><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;line-height:115%;font-family:"Times New Roman","serif";
+font-weight:bold;font-style:italic'>A</span></font></i></b><b><i><font size=3
+face="Courier New"><span style='font-size:12.0pt;line-height:115%;font-family:
+"Courier New";font-weight:bold;font-style:italic'> </span></font></i></b><b><i><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Times New Roman","serif";font-weight:bold;font-style:italic'>G</span></font></i></b><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Times New Roman","serif"'>.  Person <i><span style='font-style:
+italic'>A</span></i> quits Group <i><span style='font-style:italic'>G</span></i>
+that he is currently in. The input will not have record of <i><span
+style='font-style:italic'>A</span></i> quitting <i><span style='font-style:
+italic'>G</span></i> if <i><span style='font-style:italic'>A</span></i> is not
+in <i><span style='font-style:italic'>G</span></i>.</span></font></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:30.0pt;text-align:justify;
+text-justify:inter-ideograph;text-indent:-.25in'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Times New Roman","serif"'>3.<font size=1 face="Times New Roman"><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></font></span></font><b><font
+size=3 face="Courier New"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Courier New";font-weight:bold'>Query 1</span></font></b><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Times New Roman","serif"'>.  The first type of queries. The system
+should output the name of the group which has the maximum number of members. If
+multiple names exist, the system should output the one which is
+lexicographically the smallest.</span></font></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:30.0pt;text-align:justify;
+text-justify:inter-ideograph;text-indent:-.25in'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Times New Roman","serif"'>4.<font size=1 face="Times New Roman"><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></font></span></font><b><font
+size=3 face="Courier New"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Courier New";font-weight:bold'>Query 2</span></font></b><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;line-height:115%;
+font-family:"Times New Roman","serif"'>.  The second type of queries. The
+system should output the name of a person who knows the maximum number of
+people in the social network. If multiple names exist, the system should output
+the one which is lexicographically the smallest.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>We
+assume that: first, there is no group at the beginning; second, all group names
+as well as person names are <b><span style='font-weight:bold'>distinct</span></b>,
+and there is no white space in each of them. All characters in the names are
+‘0’-‘9’, ‘A’-‘Z’, or ‘a’-‘z’. Each name contains at most 20 characters.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Outputs</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>For
+each query in the input, output a line containing the corresponding name, which
+is the answer to that query.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Sample
+Input</span></font></b></p>
+
+<p class=Body style='margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;
+border:none'><font size=3 color=black face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";color:windowtext;border:none'><span
+style='border:none'>18</span></span></font></p>
+
+<p class=Body style='margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;
+border:none'><font size=3 color=black face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";color:windowtext;border:none'><span
+style='border:none'>Createjoin <span style='border:none'>Acer Zur</span></span></span></font></p>
+
+<p class=Body style='margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;
+border:none'><font size=3 color=black face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";color:windowtext;border:none'><span
+style='border:none'>Createjoin Weixiang Zur</span></span></font></p>
+
+<p class=Body style='margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;
+border:none'><font size=3 color=black face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";color:windowtext;border:none'><span
+style='border:none'>Createjoin Shuhe Zur</span></span></font></p>
+
+<p class=Body style='margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;
+border:none'><font size=3 color=black face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";color:windowtext;border:none'><span
+style='border:none'>Createjoin Weixiang Yuan</span></span></font></p>
+
+<p class=Body style='margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;
+border:none'><font size=3 color=black face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";color:windowtext;border:none'><span
+style='border:none'>Createjoin Acer Yuan</span></span></font></p>
+
+<p class=Body style='margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;
+border:none'><font size=3 color=black face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";color:windowtext;border:none'><span
+style='border:none'>Quit Weixiang Zur</span></span></font></p>
+
+<p class=Body style='margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;
+border:none'><font size=3 color=black face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";color:windowtext;border:none'><span
+style='border:none'>Query 1</span></span></font></p>
+
+<p class=Body style='margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;
+border:none'><font size=3 color=black face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";color:windowtext;border:none'><span
+style='border:none'>Query 2</span></span></font></p>
+
+<p class=Body style='margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;
+border:none'><font size=3 color=black face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";color:windowtext;border:none'><span
+style='border:none'>Createjoin Zing Apple</span></span></font></p>
+
+<p class=Body style='margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;
+border:none'><font size=3 color=black face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";color:windowtext;border:none'><span
+style='border:none'>Createjoin Weixiang Apple</span></span></font></p>
+
+<p class=Body style='margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;
+border:none'><font size=3 color=black face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";color:windowtext;border:none'><span
+style='border:none'>Createjoin Qing Dota</span></span></font></p>
+
+<p class=Body style='margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;
+border:none'><font size=3 color=black face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";color:windowtext;border:none'><span
+style='border:none'>Createjoin Weixiang Dota</span></span></font></p>
+
+<p class=Body style='margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;
+border:none'><font size=3 color=black face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";color:windowtext;border:none'><span
+style='border:none'>Createjoin Zing Dota</span></span></font></p>
+
+<p class=Body style='margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;
+border:none'><font size=3 color=black face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";color:windowtext;border:none'><span
+style='border:none'>Query 1</span></span></font></p>
+
+<p class=Body style='margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;
+border:none'><font size=3 color=black face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";color:windowtext;border:none'><span
+style='border:none'>Createjoin Qing Yuan</span></span></font></p>
+
+<p class=Body style='margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;
+border:none'><font size=3 color=black face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";color:windowtext;border:none'><span
+style='border:none'>Createjoin Qing Apple</span></span></font></p>
+
+<p class=Body style='margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;
+border:none'><font size=3 color=black face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";color:windowtext;border:none'><span
+style='border:none'>Createjoin Acer Dota</span></span></font></p>
+
+<p class=Body style='margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;
+border:none'><font size=3 color=black face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";color:windowtext;border:none'><span
+style='border:none'>Query 2</span></span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Sample
+Output</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>Yuan</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>Acer</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>Dota</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>Acer</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Submission</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>You
+need to submit <b><span style='font-weight:bold'>ALL</span></b> your completed skeleton
+</span></font><b><font size=3 face="Courier New"><span style='font-size:12.0pt;
+font-family:"Courier New";font-weight:bold'>*.cpp</span></font></b><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+and </span></font><b><font size=3 face="Courier New"><span style='font-size:
+12.0pt;font-family:"Courier New";font-weight:bold'>*.h</span></font></b><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+files to CodeCrunch (</span></font><span lang=EN-SG><a
+href="https://codecrunch.comp.nus.edu.sg/"><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>https://codecrunch.comp.nus.edu.sg/</span></font></a></span><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>)
+before the specified deadline. We will take only your latest submission.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal;text-autospace:none'><font
+size=3 face="Times New Roman"><span lang=EN-SG style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>Late submissions will not be accepted.
+The submission system in CodeCrunch will automatically close at the deadline.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+</div>
+
+</body>
+
+</html>

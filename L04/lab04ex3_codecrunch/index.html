@@ -1,0 +1,374 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;text-justify:
+inter-ideograph;line-height:normal;page-break-after:avoid'><b><font size=5
+face="Times New Roman"><span style='font-size:16.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>CS1020E | Lab 4 | Exercise 3   (will not be graded)</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;text-justify:
+inter-ideograph;line-height:normal;page-break-after:avoid'><b><font size=5
+face="Times New Roman"><span style='font-size:16.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Josephine</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Objective</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>The
+objective of this exercise is to learn how to implement and use a <b><span
+style='font-weight:bold'>Circular Linked List</span></b>.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Problem
+Description</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>Josephine
+is a beautiful princess. She's so beautiful that there are <i><span
+style='font-style:italic'>N</span></i> princes proposing to her (needless to
+say, <i><span style='font-style:italic'>N</span></i> could be as large as 100).
+After lots of consideration, Josephine and her parents realized that all these
+princes are perfect, so that it is impossible to choose one and reject the
+others with a good reason. They decided that Josephine would not reject the one
+chosen by Fate, while other princes could not ask for a fairer decision.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>The
+<i><span style='font-style:italic'>N</span></i> princes, numbered from 1 to <i><span
+style='font-style:italic'>N</span></i>, are asked to stand in a circle. Our
+beautiful princess would choose a random number <i><span style='font-style:
+italic'>K</span></i> and begin to find her fiancé with that number. Starting
+from the first person, she counted to <i><span style='font-style:italic'>K</span></i>,
+and removed that <i><span style='font-style:italic'>K</span></i>-th person from
+the circle. Then, she starts counting from the next person and removes the <i><span
+style='font-style:italic'>K</span></i>-th person. This process is repeated
+until all candidates are removed but The Chosen One.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>Everything
+has been prepared, except one minor problem. To be sure that the processes are
+random enough, Josephine chose a large number <i><span style='font-style:italic'>K</span></i>
+(around 100). As the result, counting and removing one princess after another
+would be a painful process. She leaves this work to you — the Royal Programmer.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>Given
+<i><span style='font-style:italic'>N</span></i> and <i><span style='font-style:
+italic'>K</span></i>, your program should print out the numbers of the princes,
+in the order in which they are removed from the circle. The last number would
+be The Chosen One.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><b><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Add your code only to the parts of the files indicated. Do
+not modify any other part of the given code, and do not add new files.</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Inputs</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>The
+first line consist of <i><span style='font-style:italic'>T</span></i>, the
+number of test cases, where 1 &lt;= <i><span style='font-style:italic'>T</span></i>
+&lt;= 100. The following <i><span style='font-style:italic'>T</span></i> lines
+specify the <i><span style='font-style:italic'>T</span></i> test cases, each
+line containing two integers, <i><span style='font-style:italic'>N</span></i>
+and <i><span style='font-style:italic'>K</span></i>.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Outputs</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>One
+line for each test case consists of the princes’ numbers in the order they are
+removed. For each output number, it is followed by a whitespace (that means
+there is a white space after the last printed number of each line).</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Sample
+Input</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>2</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>3 1</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>4 2</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Sample
+Output</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>1 2
+3 </span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>2 4
+3 1 </span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Explanation</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+color=black face="Times New Roman"><span lang=EN-SG style='font-size:12.0pt;
+font-family:"Times New Roman","serif";color:black'>Test case 1:</span></font></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='color:black;margin-bottom:0in;margin-bottom:.0001pt;
+     text-align:justify;text-justify:inter-ideograph;line-height:normal'><font
+     size=3 color=black face="Times New Roman"><span lang=EN-SG
+     style='font-size:12.0pt;font-family:"Times New Roman","serif"'>Starting
+     from 1. Stop and remove 1.</span></font></li>
+ <li class=MsoNormal style='color:black;margin-bottom:0in;margin-bottom:.0001pt;
+     text-align:justify;text-justify:inter-ideograph;line-height:normal'><font
+     size=3 color=black face="Times New Roman"><span lang=EN-SG
+     style='font-size:12.0pt;font-family:"Times New Roman","serif"'>Starting
+     from 2. Stop and remove 2.</span></font></li>
+ <li class=MsoNormal style='color:black;margin-bottom:0in;margin-bottom:.0001pt;
+     text-align:justify;text-justify:inter-ideograph;line-height:normal'><font
+     size=3 color=black face="Times New Roman"><span lang=EN-SG
+     style='font-size:12.0pt;font-family:"Times New Roman","serif"'>Only 3 is
+     left as The Chosen One.</span></font></li>
+</ul>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+color=black face="Times New Roman"><span lang=EN-SG style='font-size:12.0pt;
+font-family:"Times New Roman","serif";color:black'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+color=black face="Times New Roman"><span lang=EN-SG style='font-size:12.0pt;
+font-family:"Times New Roman","serif";color:black'>Test case 2:</span></font></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='color:black;margin-bottom:0in;margin-bottom:.0001pt;
+     text-align:justify;text-justify:inter-ideograph;line-height:normal'><font
+     size=3 color=black face="Times New Roman"><span lang=EN-SG
+     style='font-size:12.0pt;font-family:"Times New Roman","serif"'>Starting
+     from 1, count to 2. Stop and remove 2.</span></font></li>
+ <li class=MsoNormal style='color:black;margin-bottom:0in;margin-bottom:.0001pt;
+     text-align:justify;text-justify:inter-ideograph;line-height:normal'><font
+     size=3 color=black face="Times New Roman"><span lang=EN-SG
+     style='font-size:12.0pt;font-family:"Times New Roman","serif"'>Starting
+     from 3, count to 4. Stop and remove 4.</span></font></li>
+ <li class=MsoNormal style='color:black;margin-bottom:0in;margin-bottom:.0001pt;
+     text-align:justify;text-justify:inter-ideograph;line-height:normal'><font
+     size=3 color=black face="Times New Roman"><span lang=EN-SG
+     style='font-size:12.0pt;font-family:"Times New Roman","serif"'>Starting
+     from 1, count to 3. Stop and remove 3.</span></font></li>
+ <li class=MsoNormal style='color:black;margin-bottom:0in;margin-bottom:.0001pt;
+     text-align:justify;text-justify:inter-ideograph;line-height:normal'><font
+     size=3 color=black face="Times New Roman"><span lang=EN-SG
+     style='font-size:12.0pt;font-family:"Times New Roman","serif"'>Only 1 is
+     left as The Chosen One.</span></font></li>
+</ul>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-SG style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span lang=EN-SG style='font-size:12.0pt;font-family:
+"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Submission</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>You
+need to submit <b><span style='font-weight:bold'>ALL</span></b> your completed
+skeleton </span></font><b><font size=3 face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";font-weight:bold'>*.cpp</span></font></b><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+and </span></font><b><font size=3 face="Courier New"><span style='font-size:
+12.0pt;font-family:"Courier New";font-weight:bold'>*.h</span></font></b><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+files to CodeCrunch (</span></font><span lang=EN-SG><a
+href="https://codecrunch.comp.nus.edu.sg/"><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>https://codecrunch.comp.nus.edu.sg/</span></font></a></span><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>).</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><b><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Your submission for this exercise will not be manually
+graded, and there is no submission deadline for this exercise.</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><b><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>&nbsp;</span></font></b></p>
+
+</div>
+
+</body>
+
+</html>
