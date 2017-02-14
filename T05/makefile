@@ -1,6 +1,6 @@
 CC=g++
 CFLAGS=-std=c++11 -Wall
-TUT=T05
+TUT=T5
 QNS=1 2 3
 
 all: $(QNS)

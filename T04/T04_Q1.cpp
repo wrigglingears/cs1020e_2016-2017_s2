@@ -11,44 +11,9 @@ private:
     string _grade;
     double _point;
 
-    void _updatePoint() {
-        if (_grade == "A+" || _grade == "A") {
-            _point = 5.0;
-        }
-        else if (_grade == "A-") {
-            _point = 4.5;
-        }
-        else if (_grade == "B+") {
-            _point = 4.0;
-        }
-        else if (_grade == "B") {
-            _point = 3.5;
-        }
-        else if (_grade == "B-") {
-            _point = 3.0;
-        }
-        else if (_grade == "C+") {
-            _point = 2.5;
-        }
-        else if (_grade == "C") {
-            _point = 2.0;
-        }
-        else if (_grade == "D+") {
-            _point = 1.5;
-        }
-        else if (_grade == "D") {
-            _point = 1.0;
-        }
-        else if (_grade == "F" || _grade == "S" || _grade == "U") {
-            _point = 0.0;
-        }
-    }
-
 public:
     NUSModule(string name, int credits, string grade = "F")
-    : _name(name), _credits(credits), _grade(grade) {
-        _updatePoint();
-    }
+    : _name(name), _credits(credits), _grade(grade) { }
 
     string toString() {
         ostringstream oss;
@@ -57,43 +22,20 @@ public:
     }
 
     void setGrade(string grade) {
-        _grade = grade;
-        _updatePoint();
-    }
 
-    void declareAsSU() {
-        if (_grade == "A+" || _grade == "A" || _grade == "A-" ||
-            _grade == "B+" || _grade == "B" || _grade == "B-" ||
-            _grade == "C+" || _grade == "C") {
-            _grade = "S";
-        }
-        else if (_grade == "D+" || _grade == "D" ||
-                 _grade == "F") {
-            _grade = "U";
-        }
-        _updatePoint();
     }
 
     double getPoint() {
-        return _point;
+
     }
 
     double getCredits() {
-        if (_grade == "S" || _grade == "U") {
-            return 0.0;
-        }
-        return _credits;
+
     }
 };
 
-double calcCAP(NUSModule moduleList[], int numModules) {
-    double sumProducts = 0.0;
-    int sumCredits = 0;
-    for (int i = 0; i < numModules; ++i) {
-        sumProducts += moduleList[i].getPoint() * moduleList[i].getCredits();
-        sumCredits += moduleList[i].getCredits();
-    }
-    return sumProducts / sumCredits;
+double calcCap(NUSModule moduleList[], int numModules) {
+
 }
 
 int main(void) {
