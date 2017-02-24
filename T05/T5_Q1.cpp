@@ -10,13 +10,14 @@ private:
     struct Node {
         int number;
         Node* next;
-        Node() : next(NULL) {}
-        ~Node() {
-            delete next;
-            next = NULL;
-        }
     };
     Node* _head;
+
+    void swap(Node* first, Node* second) {
+        int temp = first->number;
+        first->number = second->number;
+        second->number = temp;
+    }
 
 public:
     LinkedList() : _head(NULL) { }
@@ -32,8 +33,9 @@ public:
     }
 
     ~LinkedList() {
-        delete _head;
-        _head = NULL;
+        while(_head != NULL) {
+            pop();
+        }
     }
 
     string toString() {
@@ -61,10 +63,9 @@ public:
             Node* temp = _head;
             // Set the new head
             _head = _head->next;
-            // Prep node for deletion
-            temp->next = NULL;
             // Delete node
             delete temp;
+            temp = NULL;
         }
     }
 
@@ -85,9 +86,9 @@ public:
             if (i == idx) {
                 // Redirect pointers
                 prev->next = curr->next;
-                curr->next = NULL;
                 // Remove node
                 delete curr;
+                curr = NULL;
                 return;
             }
         }
@@ -105,17 +106,13 @@ public:
             Node* first = _head;
             Node* second = _head->next;
             // Run through the list
-            while (second != NULL) {
+            for ( ; second != NULL; first = second, second = second->next) {
                 // Out of order
                 if (first->number > second->number) {
                     sorted = false;
                     // Swap the two
-                    int temp = first->number;
-                    first->number = second->number;
-                    second->number = temp;
+                    swap(first, second);
                 }
-                first = second;
-                second = second->next;
             }
         }
     }
@@ -143,53 +140,53 @@ public:
             p2 = p2->next;
         }
         // Keep track of the last node we added
-        Node* tail = _head;
+        Node* curr = _head;
         // Run through both lists
         while (p1 != NULL && p2 != NULL) {
             // Remove duplicates and move on
-            if (p1->number == tail->number) {
-                Node* dupl = p1;
+            if (p1->number == curr->number) {
+                Node* duplicate = p1;
                 p1 = p1->next;
-                dupl->next = NULL;
-                delete dupl;
+                delete duplicate;
+                duplicate = NULL;
             }
-            else if (p2->number == tail->number) {
-                Node* dupl = p2;
+            else if (p2->number == curr->number) {
+                Node* duplicate = p2;
                 p2 = p2->next;
-                dupl->next = NULL;
-                delete dupl;
+                delete duplicate;
+                duplicate = NULL;
             }
             // Not duplicate, add to the list
             else {
-                cout << "";
                 if (p1->number < p2->number) {
-                    tail->next = p1;
+                    curr->next = p1;
                     p1 = p1->next;
                 }
                 else {
-                    tail->next = p2;
+                    curr->next = p2;
                     p2 = p2->next;
                 }
-                // Move the tail pointer along
-                tail = tail->next;
+                // Move the curr pointer along
+                curr = curr->next;
             }
         }
         // Check for any excess nodes
         if (p1 != NULL) {
             // Skip duplicates
-            if (p1->number == tail->number) {
+            if (p1->number == curr->number) {
                 p1 = p1->next;
             }
-            tail->next = p1;
+            curr->next = p1;
         }
         if (p2 != NULL) {
             // Skip duplicates
-            if (p2->number == tail->number) {
+            if (p2->number == curr->number) {
                 p2 = p2->next;
             }
-            tail->next = p2;
+            curr->next = p2;
         }
-        // Clear up list2
+        // Ensure that list2 no longer has any data since
+        // everything has been moved in/deleted
         list2._head = NULL;
     }
 
@@ -200,11 +197,10 @@ public:
         }
         Node* prev = NULL;
         Node* curr = _head;
-        Node* next;
         // Run through the list
         while (curr != NULL) {
+            Node* next = curr->next;
             // Redirect pointers
-            next = curr->next;
             curr->next = prev;
             // Move pointers along
             prev = curr;
@@ -228,24 +224,22 @@ public:
             return;
         }
         Node* prev = _head;
-        Node* duplicate;
-        Node* tail = _head->next;
+        Node* curr = _head->next;
         // Run through the list
-        while (tail != NULL) {
+        while (curr != NULL) {
             // Found duplicate
-            if (tail->number == prev->number) {
-                duplicate = tail;
+            if (curr->number == prev->number) {
+                Node* duplicate = curr;
                 // Redirect pointers
-                tail = tail->next;
-                prev->next = tail;
-                duplicate->next = NULL;
+                curr = curr->next;
+                prev->next = curr;
                 // Remove duplicate
                 delete duplicate;
                 duplicate = NULL;
             }
             else {
                 // Move pointers along
-                tail = tail->next;
+                curr = curr->next;
                 prev = prev->next;
             }
         }

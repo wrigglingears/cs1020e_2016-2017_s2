@@ -25,6 +25,7 @@ int main() {
     vector<Group*> groups;
 
     //input
+    
 
 
     //process queries

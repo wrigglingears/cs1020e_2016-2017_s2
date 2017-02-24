@@ -63,6 +63,7 @@ int main(void) {
     reverse(my_list);
     print(my_list);
 
+    reverse(my_list);
     removeDuplicates(my_list);
     print(my_list);
 }

@@ -11,14 +11,14 @@ private:
         int number;
         Node* next;
         Node* prev;
-        Node() : next(NULL), prev(NULL) {}
-        ~Node() {
-            delete next;
-            next = NULL;
-            prev = NULL;
-        }
     };
     Node* _head;
+
+    void swap(Node* first, Node* second) {
+        int temp = first->number;
+        first->number = second->number;
+        second->number = temp;
+    }
 
 public:
     CircularDoublyLinkedList() : _head(NULL) {}
@@ -34,12 +34,9 @@ public:
     }
 
     ~CircularDoublyLinkedList() {
-        // Turn list from circular to standard list
-        if (_head != NULL) {
-            _head->prev->next = NULL;
+        while (_head != NULL) {
+            pop();
         }
-        delete _head;
-        _head = NULL;
     }
 
     string toString() {
@@ -84,19 +81,19 @@ public:
         }
         // Special case for list of size 1
         if (_head->next == _head) {
-            _head->next = NULL;
             delete _head;
             _head = NULL;
+            return;
         }
-        // Normal case
+        // Have a pointer to the Node to be deleted
         Node* temp = _head;
         // Redirect pointers
         _head = _head->next;
         temp->prev->next = _head;
         _head->prev = temp->prev;
         // Delete node
-        temp->next = NULL;
         delete temp;
+        temp = NULL;
     }
 
     int retrieve(int idx) {
@@ -129,13 +126,11 @@ public:
                 // Redirect pointers
                 curr->prev->next = curr->next;
                 curr->next->prev = curr->prev;
-                curr->next = NULL;
                 delete curr;
                 curr = NULL;
                 return;
             }
         }
-        return;
     }
 
     void reverse() {
@@ -146,10 +141,7 @@ public:
         Node* front = _head;
         Node* back = _head->prev;
         while (front != back) {
-            // Swap the two numbers
-            int temp = front->number;
-            front->number = back->number;
-            back->number = temp;
+            swap(front, back);
             // Move the front and back pointers
             front = front->next;
             if (front == back) {
@@ -181,5 +173,9 @@ int main(void) {
     cout << list.toString() << endl;
 
     list.reverse();
+    cout << list.toString() << endl;
+
+    list.pop();
+    list.pop();
     cout << list.toString() << endl;
 }
