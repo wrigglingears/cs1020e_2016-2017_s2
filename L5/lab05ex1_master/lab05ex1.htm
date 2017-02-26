@@ -1,0 +1,590 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma","sans-serif";}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;text-justify:
+inter-ideograph;line-height:normal;page-break-after:avoid'><b><font size=5
+face="Times New Roman"><span style='font-size:16.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>CS1020E | Lab 5 | Exercise 1</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;text-justify:
+inter-ideograph;line-height:normal;page-break-after:avoid'><b><font size=5
+face="Times New Roman"><span style='font-size:16.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Binary Search Tree</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Objective</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>The
+objective of this exercise is to learn how to <b><span style='font-weight:bold'>manipulate
+simple non-linear linked structures</span></b>.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Problem
+Description</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>A
+<i><span style='font-style:italic'>Binary Search Tree</span></i> is a data
+structure for maintaining a list of integers, where each node in the tree
+consists of a single integer, has at most two children, and holds the following
+condition: </span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:26.05pt;margin-bottom:
+0in;margin-left:21.3pt;margin-bottom:.0001pt;text-align:justify;text-justify:
+inter-ideograph;line-height:normal'><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>The integer in
+the node must be <b><span style='font-weight:bold'>greater than or equal</span></b>
+to every integer in the <i><span style='font-style:italic'>left subtree</span></i>
+of this node, and must be <b><span style='font-weight:bold'>smaller than</span></b>
+every integer in the <i><span style='font-style:italic'>right subtree</span></i>
+of this node.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>For
+example, these two trees are binary search trees:</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'><img width=198
+height=166 id="Picture 1" src="lab05ex1_files/image001.png"><img width=315
+height=140 id="Picture 2" src="lab05ex1_files/image002.png"></span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><font size=3 face="Times New Roman"><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><font size=3 face="Times New Roman"><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><font size=3 face="Times New Roman"><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>while these two trees are NOT binary
+search tree:</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><font size=3 face="Times New Roman"><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'><img width=211
+height=154 id="Picture 3" src="lab05ex1_files/image003.png"></span></font></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>(Because 4 &#8805;
+3; 4 should not be in the left subtree of 3.)</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'><img width=209
+height=174 id="Picture 4" src="lab05ex1_files/image004.png"></span></font></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>(This is
+obviously not a binary search tree.)</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><font size=3 face="Times New Roman"><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><font size=3 face="Times New Roman"><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>There
+will be <i><span style='font-style:italic'>N</span></i> queries given to you. Each
+query will be one of the following types:</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+margin-left:28.35pt;text-align:justify;text-justify:inter-ideograph;text-indent:
+-14.15pt;line-height:normal'><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>1.  <b><span
+style='font-weight:bold'>Insert an integer</span></b> to the binary tree. You
+must insert a new element at the <i><span style='font-style:italic'>bottom of
+the tree</span></i>, and insert it at the correct position such that the
+conditions of a binary search tree must be fulfilled all the time.</span></font></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+margin-left:28.35pt;text-align:justify;text-justify:inter-ideograph;text-indent:
+-14.15pt;line-height:normal'><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>2.  <b><span
+style='font-weight:bold'>Find the minimum</span></b> integer in the binary
+tree, or return 0 if the tree is empty.</span></font></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+margin-left:28.35pt;text-align:justify;text-justify:inter-ideograph;text-indent:
+-14.15pt;line-height:normal'><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>3.  <b><span
+style='font-weight:bold'>Find the maximum</span></b> integer in the binary
+tree, or return 0 if the tree is empty.</span></font></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+margin-left:28.35pt;text-align:justify;text-justify:inter-ideograph;text-indent:
+-14.15pt;line-height:normal'><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>4.  <b><span
+style='font-weight:bold'>Search an integer</span></b> in the binary tree. You
+should output the <i><span style='font-style:italic'>depth</span></i> of the
+node nearest to the <i><span style='font-style:italic'>root</span></i> that has
+that integer inside, or output 0 if the integer is not in the tree. The root has
+depth = 1. The root is the topmost node in the tree.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><b><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Add your code only to the parts of the files indicated. Do
+not modify any other part of the given code, and do not add new files.</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Inputs</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>The
+first line consists of an integer <i><span style='font-style:italic'>N</span></i>,
+which indicate the number of queries.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><i><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+font-style:italic'>N</span></font></i><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'> lines follow.
+Each line represents a query, and is in one of the following formats:</span></font></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:justify;text-justify:inter-ideograph;text-indent:-.25in;line-height:
+normal'><font size=3 face=Symbol><span style='font-size:12.0pt;font-family:
+Symbol'>·<font size=1 face="Times New Roman"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></font></span></font><b><font size=3 face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";font-weight:bold'>INSERT<i><span
+style='font-style:italic'> &lt;integer&gt;</span></i></span></font></b><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+ indicates the query of the first type.</span></font></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:justify;text-justify:inter-ideograph;text-indent:-.25in;
+line-height:normal'><font size=3 face=Symbol><span style='font-size:12.0pt;
+font-family:Symbol'>·<font size=1 face="Times New Roman"><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></font></span></font><b><font size=3 face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";font-weight:bold'>FINDMIN</span></font></b><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'> 
+indicates the query of the second type.</span></font></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:justify;text-justify:inter-ideograph;text-indent:-.25in;
+line-height:normal'><font size=3 face=Symbol><span style='font-size:12.0pt;
+font-family:Symbol'>·<font size=1 face="Times New Roman"><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></font></span></font><b><font size=3 face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";font-weight:bold'>FINDMAX</span></font></b><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+ indicates the query of the third type.</span></font></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:justify;text-justify:inter-ideograph;text-indent:-.25in;line-height:
+normal'><font size=3 face=Symbol><span style='font-size:12.0pt;font-family:
+Symbol'>·<font size=1 face="Times New Roman"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></font></span></font><b><font size=3 face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";font-weight:bold'>FIND <i><span
+style='font-style:italic'>&lt;integer&gt;</span></i></span></font></b><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'> 
+ indicates the query of the fourth type.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><i><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+font-style:italic'>N</span></font></i><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'> will be between
+1 and 3000 inclusive. Each integer in the query will be between 1 and 1000000
+inclusive</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Outputs</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>For
+each </span></font><font size=3 face="Courier New"><span style='font-size:12.0pt;
+font-family:"Courier New"'>FIND</span></font><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>, </span></font><font
+size=3 face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>FINDMIN</span></font><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>,
+</span></font><font size=3 face="Courier New"><span style='font-size:12.0pt;
+font-family:"Courier New"'>FINDMAX</span></font><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+query, you have to output an integer as explained above.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Sample
+Input</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>8</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>INSERT
+3</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>INSERT
+1</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>INSERT
+2</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>FINDMIN</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>FIND
+4</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>INSERT
+4</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>FINDMAX
+</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>FIND
+4</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Sample
+Output</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>1</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>0</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>4</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>2</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Explanation</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+color=black face="Times New Roman"><span lang=EN-SG style='font-size:12.0pt;
+font-family:"Times New Roman","serif";color:black'>The tree after all the
+queries will look like this:</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+color=black face="Times New Roman"><span lang=EN-SG style='font-size:12.0pt;
+font-family:"Times New Roman","serif";color:black'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;
+text-indent:-1.0in;line-height:normal'><font size=3 face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New"'><img width=235 height=175
+id="Picture 5" src="lab05ex1_files/image005.png"
+alt="Macintosh HD:Users:jonathanirvings:Documents:Screenshots:Screen Shot 2014-10-07 at 1.19.29 am.png"></span></font></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:-1.0in;line-height:normal'><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:-1.0in;line-height:normal'><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>It
+can be seen that 4 has depth = 2.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+color=black face="Times New Roman"><span style='font-size:12.0pt;font-family:
+"Times New Roman","serif";color:black'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Submission</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>You
+need to submit <b><span style='font-weight:bold'>ALL</span></b> your completed
+skeleton </span></font><b><font size=3 face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";font-weight:bold'>*.cpp</span></font></b><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+and </span></font><b><font size=3 face="Courier New"><span style='font-size:
+12.0pt;font-family:"Courier New";font-weight:bold'>*.h</span></font></b><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+files to CodeCrunch (</span></font><span lang=EN-SG><a
+href="https://codecrunch.comp.nus.edu.sg/"><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>https://codecrunch.comp.nus.edu.sg/</span></font></a></span><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>)
+before the specified deadline. We will take only your latest submission.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal;text-autospace:none'><font
+size=3 face="Times New Roman"><span lang=EN-SG style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>Late submissions will not be accepted.
+The submission system in CodeCrunch will automatically close at the deadline.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+</div>
+
+</body>
+
+</html>
