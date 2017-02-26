@@ -117,77 +117,71 @@ public:
         }
     }
 
-    void moveFromList( LinkedList& list2 ) {
-        // Delete our list
-        delete _head;
-        _head = NULL;
-        // Move head from other list
-        _head = list2._head;
-        // Empty other list
-        list2._head = NULL;
-    }
+    void unionWithList( LinkedList& other ) {
+        // Other list is empty
+        if (other._head == NULL) {
+            return;
+        }
+        // Our list is empty
+        if (_head == NULL) {
+            _head = other._head;
+            other._head = NULL;
+            return;
+        }
 
-    void intersectFromList( LinkedList& list2 ) {
         Node* p1 = _head;
-        Node* p2 = list2._head;
-        // Set the new head as the lower value of the two heads
+        Node* p2 = other._head;
+        // Select the new head as the lower value of the two heads
         if (p1->number < p2->number) {
-            // No change in head
+            // No change to the current head
             p1 = p1->next;
         }
-        else {
+        else if (p1->number > p2->number) {
             _head = p2;
             p2 = p2->next;
         }
-        // Keep track of the last node we added
-        Node* curr = _head;
-        // Run through both lists
-        while (p1 != NULL && p2 != NULL) {
-            // Remove duplicates and move on
-            if (p1->number == curr->number) {
-                Node* duplicate = p1;
+        // Both heads are the same
+        else {
+            Node* duplicate = p2;
+            p1 = p1->next;
+            p2 = p2->next;
+            delete duplicate;
+        }
+
+        Node* tail = _head;
+        // Continue as long as there are still nodes in both lists
+        while (p1 != NULL && p1 != NULL) {
+            // Next node comes from our list
+            if (p1->number < p2->number) {
+                tail->next = p1;
                 p1 = p1->next;
-                delete duplicate;
-                duplicate = NULL;
             }
-            else if (p2->number == curr->number) {
+            // Next node comes from other list
+            else if (p1->number > p2->number) {
+                tail->next = p2;
+                p2 = p2->next;
+            }
+            // Duplicate found
+            else {
                 Node* duplicate = p2;
+                tail->next = p1;
+                p1 = p1->next;
                 p2 = p2->next;
                 delete duplicate;
-                duplicate = NULL;
             }
-            // Not duplicate, add to the list
-            else {
-                if (p1->number < p2->number) {
-                    curr->next = p1;
-                    p1 = p1->next;
-                }
-                else {
-                    curr->next = p2;
-                    p2 = p2->next;
-                }
-                // Move the curr pointer along
-                curr = curr->next;
-            }
+            tail = tail->next;
         }
-        // Check for any excess nodes
+
+        // Add remaining nodes from the longer list
         if (p1 != NULL) {
-            // Skip duplicates
-            if (p1->number == curr->number) {
-                p1 = p1->next;
-            }
-            curr->next = p1;
+            tail->next = p1;
         }
         if (p2 != NULL) {
-            // Skip duplicates
-            if (p2->number == curr->number) {
-                p2 = p2->next;
-            }
-            curr->next = p2;
+            tail->next = p2;
         }
-        // Ensure that list2 no longer has any data since
-        // everything has been moved in/deleted
-        list2._head = NULL;
+
+        // Ensure that other list is empty
+        other._head = NULL;
     }
 
     void reverse() {
@@ -210,84 +204,26 @@ public:
         _head = prev;
     }
 
-    void reverseRestricted() {
-        LinkedList resultList;
-        while (_head != NULL) {
-            resultList.push(_head->number);
-            pop();
-        }
-        moveFromList(resultList);
-    }
-
-    void removeDuplicates() {
-        if (_head == NULL) {
-            return;
-        }
-        Node* prev = _head;
-        Node* curr = _head->next;
-        // Run through the list
-        while (curr != NULL) {
-            // Found duplicate
-            if (curr->number == prev->number) {
-                Node* duplicate = curr;
-                // Redirect pointers
-                curr = curr->next;
-                prev->next = curr;
-                // Remove duplicate
-                delete duplicate;
-                duplicate = NULL;
-            }
-            else {
-                // Move pointers along
-                curr = curr->next;
-                prev = prev->next;
-            }
-        }
-    }
 };
 
 int main(void) {
-    LinkedList list;
-    list.push(5);
-    list.push(4);
-    list.push(4);
-    list.push(4);
-    list.push(4);
-    list.push(3);
-    list.push(2);
-    list.push(2);
-    list.push(1);
-    list.push(1);
+    LinkedList list1;
+    list1.push(5);
+    list1.push(4);
+    list1.push(3);
+    list1.push(2);
+    list1.push(1);
 
-    LinkedList list2;
-    list2.push(6);
-    list2.push(5);
-    list2.push(4);
-    list2.push(3);
+    LinkedList list2{1, 3, 4, 5, 6};
 
-    LinkedList list3{1, 2, 3, 5};
+    cout << "list1: " << list1.toString() << endl;
+    cout << "list2: " << list2.toString() << endl;
 
-    cout << list.toString() << endl;
-    cout << list2.toString() << endl;
-    cout << list3.toString() << endl;
+    list1.unionWithList(list2);
+    cout << "union 2 into 1: " << list1.toString() << endl;
 
-    list.removeDuplicates(); cout << "removed duplicates" << endl;
-    list2.removeDuplicates(); cout << "removed duplicates" << endl;
-    cout << list.toString() << endl;
-    cout << list2.toString() << endl;
-
-    list.moveFromList(list3); cout << "moved" << endl;
-    cout << list.toString() << endl;
-
-    list.intersectFromList(list2); cout << "intersected" << endl;
-    cout << list.toString() << endl;
-    cout << list2.toString() << endl;
-
-    list.reverse(); cout << "reversed" << endl;
-    cout << list.toString() << endl;
-
-    list.reverseRestricted(); cout << "reversed restricted" << endl;
-    cout << list.toString() << endl;
+    list1.reverse();
+    cout << "reverse 1: " << list1.toString() << endl;
 
     return 0;
 }
