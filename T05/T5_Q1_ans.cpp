@@ -118,11 +118,90 @@ public:
     }
 
     void unionWithList( LinkedList& other ) {
-        
+        // Other list is empty
+        if (other._head == NULL) {
+            return;
+        }
+        // Our list is empty
+        if (_head == NULL) {
+            _head = other._head;
+            other._head = NULL;
+            return;
+        }
+
+        Node* p1 = _head;
+        Node* p2 = other._head;
+        // Select the new head as the lower value of the two heads
+        if (p1->number < p2->number) {
+            // No change to the current head
+            p1 = p1->next;
+        }
+        else if (p1->number > p2->number) {
+            _head = p2;
+            p2 = p2->next;
+        }
+        // Both heads are the same
+        else {
+            Node* duplicate = p2;
+            p1 = p1->next;
+            p2 = p2->next;
+            delete duplicate;
+        }
+
+        Node* tail = _head;
+        // Continue as long as there are still nodes in both lists
+        while (p1 != NULL && p1 != NULL) {
+            // Next node comes from our list
+            if (p1->number < p2->number) {
+                tail->next = p1;
+                p1 = p1->next;
+            }
+            // Next node comes from other list
+            else if (p1->number > p2->number) {
+                tail->next = p2;
+                p2 = p2->next;
+            }
+            // Duplicate found
+            else {
+                Node* duplicate = p2;
+                tail->next = p1;
+                p1 = p1->next;
+                p2 = p2->next;
+                delete duplicate;
+            }
+            tail = tail->next;
+        }
+
+        // Add remaining nodes from the longer list
+        if (p1 != NULL) {
+            tail->next = p1;
+        }
+        if (p2 != NULL) {
+            tail->next = p2;
+        }
+
+        // Ensure that other list is empty
+        other._head = NULL;
     }
 
     void reverse() {
-        
+        // Special case for list of size 0/1
+        if (_head == NULL || _head->next == NULL) {
+            return;
+        }
+        Node* prev = NULL;
+        Node* curr = _head;
+        // Run through the list
+        while (curr != NULL) {
+            Node* next = curr->next;
+            // Redirect pointers
+            curr->next = prev;
+            // Move pointers along
+            prev = curr;
+            curr = next;
+        }
+        // New head
+        _head = prev;
     }
 
 };

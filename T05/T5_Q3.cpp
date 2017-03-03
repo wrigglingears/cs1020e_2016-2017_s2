@@ -5,48 +5,11 @@
 using namespace std;
 
 void reverse(list<int>& linkList) {
-    // Size 0 or 1, no need to reverse
-    if (linkList.size() < 2) {
-        return;
-    }
-    list<int>::iterator front = linkList.begin();
-    list<int>::iterator back = linkList.end();
 
-    /* Shorter, but not as obvious
-    while (front != --back) {
-        swap(*front, *back);
-        ++front;
-    }*/
-
-    while (front != back) {
-        --back;
-        swap(*front, *back);
-        // If list length is even
-        if (++front == back) {
-            return;
-        }
-        --back;
-    }
 }
 
 void removeDuplicates(list<int>& linkList) {
-    // Size 0 or 1, no duplicates
-    if (linkList.size() < 2) {
-        return;
-    }
-    list<int>::iterator prev = linkList.begin();
-    list<int>::iterator curr = ++linkList.begin();
-    while (curr != linkList.end()) {
-        if (*curr == *prev) {
-            curr = linkList.erase(curr);
-        }
-        // Only move both pointers along if no duplicates
-        // as there might be multiple duplicates in a row
-        else {
-            ++curr;
-            ++prev;
-        }
-    }
+    
 }
 
 void print(list<int>& linkList) {

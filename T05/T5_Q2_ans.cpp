@@ -134,7 +134,21 @@ public:
     }
 
     void reverse() {
-        
+        // Size 0 or 1, no need to reverse
+        if (_head == NULL || _head->next == NULL) {
+            return;
+        }
+        Node* front = _head;
+        Node* back = _head->prev;
+        while (front != back) {
+            swap(front, back);
+            // Move the front and back pointers
+            front = front->next;
+            if (front == back) {
+                return;
+            }
+            back = back->prev;
+        }
     }
 };
 
