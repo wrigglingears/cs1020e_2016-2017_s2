@@ -1,7 +1,3 @@
-#include <iostream>
-#include <queue>
-#include <utility>
-
 class my_stack {
 private:
     queue<int> _q1;

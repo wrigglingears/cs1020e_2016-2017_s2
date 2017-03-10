@@ -1,7 +1,3 @@
-#include <iostream>
-#include <queue>
-#include <utility>
-
 class my_queue {
 private:
     stack<int> inbox;
