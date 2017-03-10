@@ -1,0 +1,370 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;text-justify:
+inter-ideograph;line-height:normal;page-break-after:avoid'><b><font size=5
+face="Times New Roman"><span style='font-size:16.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>CS1020E | Lab 6 | Exercise 1</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;text-justify:
+inter-ideograph;line-height:normal;page-break-after:avoid'><b><font size=5
+face="Times New Roman"><span style='font-size:16.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Infix to Postfix</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Objectives</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>One
+of the objectives of this exercise is to learn how to use the STL </span></font><font
+size=3 face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>stack</span></font><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+container adaptor.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Problem
+Description</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>An
+arithmetic expression can be expressed in three notations: <i><span
+style='font-style:italic'>prefix</span></i>, <i><span style='font-style:italic'>infix</span></i>,
+and <i><span style='font-style:italic'>postfix</span></i>. The infix notation
+is the one most of us are familiar with, where each binary operator appears between
+its two operands. For example, </span></font><font size=3 face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New"'>&quot;2&nbsp;*&nbsp;(&nbsp;3&nbsp;+&nbsp;4&nbsp;)&quot;</span></font><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+is an infix expression. On the other hand, in the postfix notation, each binary
+operator appears behind its two operands. For example, </span></font><font
+size=3 face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>&quot;2&nbsp;3&nbsp;4&nbsp;+&nbsp;*&quot;</span></font><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+is the postfix expression equivalent to the example infix expression.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>In
+this exercise, you are to use a stack to convert an input infix expression to
+the corresponding postfix expression. Refer to the lecture notes for the algorithm.
+You are required to use the STL </span></font><font size=3 face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New"'>stack</span></font><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><b><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Add your code only to the parts of the files indicated. Do
+not modify any other part of the given code, and do not add new files.</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Inputs</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>The
+input is a single line that contains an infix expression. The input ends when
+the end-of-file is reached (which can be entered from the keyboard using
+CTR-D).</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>The
+input infix expression can contain only the following <i><span
+style='font-style:italic'>tokens</span></i>:</span></font></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;
+text-justify:inter-ideograph;text-indent:-14.15pt;line-height:normal'><font
+size=3 face=Symbol><span style='font-size:12.0pt;font-family:Symbol'>·<font
+size=1 face="Times New Roman"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></font></span></font><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>positive integer
+numbers,</span></font></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;
+text-justify:inter-ideograph;text-indent:-14.15pt;line-height:normal'><font
+size=3 face=Symbol><span style='font-size:12.0pt;font-family:Symbol'>·<font
+size=1 face="Times New Roman"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></font></span></font><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>the operators: </span></font><font
+size=3 face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>+</span></font><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>,
+</span></font><font size=3 face="Courier New"><span style='font-size:12.0pt;
+font-family:"Courier New"'>-</span></font><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>, </span></font><font
+size=3 face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>*</span></font><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+and </span></font><font size=3 face="Courier New"><span style='font-size:12.0pt;
+font-family:"Courier New"'>/</span></font><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>,</span></font></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:14.2pt;margin-bottom:.0001pt;text-align:justify;
+text-justify:inter-ideograph;text-indent:-14.15pt;line-height:normal'><font
+size=3 face=Symbol><span style='font-size:12.0pt;font-family:Symbol'>·<font
+size=1 face="Times New Roman"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></font></span></font><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>the left and
+right parentheses: </span></font><font size=3 face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New"'>(</span></font><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+and </span></font><font size=3 face="Courier New"><span style='font-size:12.0pt;
+font-family:"Courier New"'>)</span></font><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>In
+the input line, every two tokens are separated by a space. You can assume that
+every input infix expression is valid.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Outputs</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>A
+single line that contains the corresponding postfix expression of the input
+expression. Each output token is followed by a space (that means the last
+character of the output line is a space).</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Sample
+Input</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>4 –
+( 11 + 7 * 6 ) / 9</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Sample
+Output</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>4
+11 7 6 * + 9 / - </span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Submission</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>You
+need to submit <b><span style='font-weight:bold'>ALL</span></b> your completed
+skeleton </span></font><b><font size=3 face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";font-weight:bold'>*.cpp</span></font></b><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+and </span></font><b><font size=3 face="Courier New"><span style='font-size:
+12.0pt;font-family:"Courier New";font-weight:bold'>*.h</span></font></b><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+files to CodeCrunch (</span></font><span lang=EN-SG><a
+href="https://codecrunch.comp.nus.edu.sg/"><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>https://codecrunch.comp.nus.edu.sg/</span></font></a></span><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>)
+before the specified deadline. We will take only your latest submission.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal;text-autospace:none'><font
+size=3 face="Times New Roman"><span lang=EN-SG style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>Late submissions will not be accepted.
+The submission system in CodeCrunch will automatically close at the deadline.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+</div>
+
+</body>
+
+</html>

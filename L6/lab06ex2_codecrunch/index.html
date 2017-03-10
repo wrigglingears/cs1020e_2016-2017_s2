@@ -1,0 +1,411 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;text-justify:
+inter-ideograph;line-height:normal;page-break-after:avoid'><b><font size=5
+face="Times New Roman"><span style='font-size:16.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>CS1020E | Lab 6 | Exercise 2</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;text-justify:
+inter-ideograph;line-height:normal;page-break-after:avoid'><b><font size=5
+face="Times New Roman"><span style='font-size:16.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Penguin Dive</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Objectives</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>One
+of the objectives of this exercise is to learn how to use the STL </span></font><font
+size=3 face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>queue</span></font><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+container adaptor.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Problem
+Description</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>Tux,
+the penguin, is walking on ice-covered sea in a straight path. The path that
+Tux walks along is divided into 2 &#8804; <b><i><span style='font-weight:bold;
+font-style:italic'>N</span></i></b> &#8804; 1,000,000 units. In each unit <b><i><span
+style='font-weight:bold;font-style:italic'>i</span></i></b>, there are 0 &#8804;
+<b><i><span style='font-weight:bold;font-style:italic'>F<sub>i</sub></span></i></b>
+&#8804; 1000 fish swimming beneath the ice. Every unit has a hole through the
+ice. </span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>At
+any unit, Tux can choose to dive through the ice into the water below, and
+travel a number of units, catching all the fish along the way, i.e. from unit <b><i><span
+style='font-weight:bold;font-style:italic'>i</span></i></b><sub>dive</sub> to
+unit <b><i><span style='font-weight:bold;font-style:italic'>i</span></i></b><sub>surface</sub>.
+Tux can only dive once in the entire journey. He may dive and surface in the
+same unit.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>However,
+in some units, there is the risk that Tux himself becomes lunch to other sea
+creatures. In the other units, there is no such risk.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>Help
+Tux to efficiently find a continuous chain of units that he can catch the most
+fish, while keeping his risk to at most <b><i><span style='font-weight:bold;
+font-style:italic'>T</span></i> </b>(1 &#8804; <b><i><span style='font-weight:
+bold;font-style:italic'>T</span></i></b> &#8804; <i><span style='font-style:
+italic'>N</span></i>). In other words, the part of the journey in which Tux is
+underwater should not have more than <b><i><span style='font-weight:bold;
+font-style:italic'>T</span></i></b> units that place Tux at risk.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><b><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>Add your code only to the parts of the file indicated. Do not
+modify any other part of the given code, and do not add new files.</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><b><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+font-weight:bold'>You are required to use only a queue for this task, and NO
+other container/array.</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Inputs</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>The
+first line in the input contains <b><i><span style='font-weight:bold;
+font-style:italic'>T</span></i></b>.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>Each
+of the subsequent <b><i><span style='font-weight:bold;font-style:italic'>N</span></i></b>
+lines contains two tokens separated by a space:</span></font></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:justify;text-justify:inter-ideograph;text-indent:-.25in;line-height:
+normal'><font size=3 face=Symbol><span style='font-size:12.0pt;font-family:
+Symbol'>·<font size=1 face="Times New Roman"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></font></span></font><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>The risk that
+the unit presents to Tux, either </span></font><font size=3 face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New"'>'R'</span></font><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+for risky, or </span></font><font size=3 face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New"'>'C'</span></font><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+for clear.</span></font></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:justify;text-justify:inter-ideograph;text-indent:-.25in;line-height:
+normal'><font size=3 face=Symbol><span style='font-size:12.0pt;font-family:
+Symbol'>·<font size=1 face="Times New Roman"><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></font></span></font><font size=3 face="Times New Roman"><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif"'>The number of
+fish in that unit, <b><i><span style='font-weight:bold;font-style:italic'>F<sub>i</sub></span></i></b>.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Outputs</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>The
+maximum number of fish Tux can get while keeping his risk within <b><i><span
+style='font-weight:bold;font-style:italic'>T</span></i></b>. </span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<font size=3 face="Times New Roman"><span style='font-size:12.0pt;line-height:
+115%;font-family:"Times New Roman","serif"'><br clear=all style='page-break-before:
+always'>
+</span></font>
+
+<p class=MsoNormal><font size=3 face="Times New Roman"><span style='font-size:
+12.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Sample
+Input</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>2</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>R
+10</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>C 2</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>R 3</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>C 4</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>R 5</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Sample
+Output</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Courier New"><span style='font-size:12.0pt;font-family:"Courier New"'>19</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Explanation</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>Tux
+would dive at the first unit and surface at the fourth unit. In between, the
+risk would be 2 (two </span></font><font size=3 face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New"'>R</span></font><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>s
+along the way) and the number of fish is 19. </span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;text-align:justify;text-justify:inter-ideograph;line-height:
+normal;page-break-after:avoid'><b><font size=4 face="Times New Roman"><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";font-weight:bold'>Submission</span></font></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>You
+need to submit <b><span style='font-weight:bold'>ALL</span></b> your completed
+skeleton </span></font><b><font size=3 face="Courier New"><span
+style='font-size:12.0pt;font-family:"Courier New";font-weight:bold'>*.cpp</span></font></b><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+and </span></font><b><font size=3 face="Courier New"><span style='font-size:
+12.0pt;font-family:"Courier New";font-weight:bold'>*.h</span></font></b><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>
+files to CodeCrunch (</span></font><span lang=EN-SG><a
+href="https://codecrunch.comp.nus.edu.sg/"><font size=3 face="Times New Roman"><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif"'>https://codecrunch.comp.nus.edu.sg/</span></font></a></span><font
+size=3 face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>)
+before the specified deadline. We will take only your latest submission.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal;text-autospace:none'><font
+size=3 face="Times New Roman"><span lang=EN-SG style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>Late submissions will not be accepted.
+The submission system in CodeCrunch will automatically close at the deadline.</span></font></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;text-justify:inter-ideograph;line-height:normal'><font size=3
+face="Times New Roman"><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>&nbsp;</span></font></p>
+
+</div>
+
+</body>
+
+</html>
